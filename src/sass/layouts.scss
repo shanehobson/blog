@@ -1,0 +1,109 @@
+@import '../sass/breakpoints.scss';
+
+// Containers
+.container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.narrow-container {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.narrow-nav-container {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.blog-entry-container {
+    padding: 20px 40px;
+    background-color: #fff;
+    border: 1px solid $grayBorder;
+    border-radius: 8px;
+
+    &.tall {
+        height: 700px;
+        overflow-y: scroll;
+    }
+}
+
+// Flexbox
+.d-flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.j-center {
+    justify-content: center;
+}
+
+.j-start {
+    justify-content: flex-start;
+}
+
+.j-end {
+    justify-content: flex-end;
+}
+
+.j-space-around {
+    justify-content: space-around;
+}
+
+.j-space-between {
+    justify-content: space-between;
+}
+
+.align-center {
+    align-items: flex-center;
+}
+
+.align-start {
+    align-items: flex-start;
+}
+
+.align-end {
+    align-items: flex-end;
+}
+
+.align-space-between {
+    align-items: space-between;
+}
+
+.align-space-around {
+    align-items: space-around;
+}
+
+@media only screen and (max-width: $tablet-breakpoint) {
+    .container{
+        margin: 0;
+        padding: 0;
+    } 
+    .narrow-container {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: $mobile-breakpoint) {
+    .blog-entry-container {
+        padding: 8px 20px;
+        border-bottom: 1px solid $grayBorder;
+        border-radius: 0;
+    
+        &.tall {
+            height: 700px;
+            overflow-y: scroll;
+        }
+    }
+}

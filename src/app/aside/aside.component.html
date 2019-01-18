@@ -1,0 +1,17 @@
+<aside class="aside-container">
+  <div class="d-flex j-center" style="height: 35px; margin-bottom: 30px;">
+    <input type="text" class="search-input-field" (keyup.enter)="searchBlogPosts()" placeholder="Search blog posts..." #search>
+    <button class="search-bar-icon-container" (mouseup)="searchBlogPosts()"><i class="fas fa-search" style="color: #fff"></i></button>
+  </div>
+  <div class="d-flex j-center" style="height:37px">
+      <h5 class="aside-subtitle">Downloads</h5>
+  </div>
+  <ul class="downloads-link-list">
+    <li>
+        <a href="https://s3.us-east-2.amazonaws.com/pitchingtheory.com/bucketFolder/winter-throwing-program.pdf" target="_blank">Winter 2018-2019 Throwing Program </a><img src="../../assets/images/adobe.png" class="pdf-icon">
+    </li>
+    <li>
+        <a href="https://s3.us-east-2.amazonaws.com/pitchingtheory.com/bucketFolder/calendar-winter-throwing-program.pdf" target="_blank">Winter 2018-2019 Throwing Program Calendar <img src="../../assets/images/adobe.png" class="pdf-icon"></a>
+    </li>
+  </ul>
+</aside>

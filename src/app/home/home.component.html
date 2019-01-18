@@ -1,0 +1,23 @@
+<div class="narrow-container">
+    <section class="home-container">
+        <div class="home-main-content-container">
+            <div *ngIf="showResults" class="d-flex j-space-between align-center" style="width: 230px; margin: 5px auto 10px auto;">
+                <button class="rect-btn rect-btn_small rect-btn_red" (mouseup)="unfilterResults()">Go Back <i class="fa fa-arrow-left"></i></button>
+                <div class="d-flex j-center align-center" style="font-size: 19px; font-weight: bold; padding-top: 5px;">
+                    {{sortedAndFilteredBlogs.length}} result{{sortedAndFilteredBlogs.length === 1 ? '' : 's'}}.
+                </div>
+            </div>
+            <div *ngFor="let blog of sortedAndFilteredBlogs; let i = index" class="individual-blog-container">
+                <app-template1 [blog]="blog" [index]="i" [editBlogMode]="editBlogMode" (postDeleted)="reloadBlogPosts($event)"></app-template1>
+            </div>
+        </div>
+        <div>
+            <div class="home-aside-content-container">
+                <app-aside (emitSearchBlogPosts)="searchBlogPosts($event)"></app-aside>
+            </div>
+            <div class="home-aside-about-content-container">
+              <app-aside-about></app-aside-about>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,31 @@
+<form class="input-field-form">
+    <div class="d-flex j-center flex-column align-center" style="margin-left: auto; margin-right: auto;" [formGroup]="paragraphForm">
+        <div style="padding: 0 5px 5px 5px;" class="d-flex j-center">
+            <button
+              style="margin-top: 2px;"
+              type="submit"
+              class="rect-btn rect-btn_small rect-btn_blue"
+              [disabled]="!paragraphForm.valid || !paragraphForm.dirty"
+              (mouseup)="addParagraph(paragraphForm)"
+              >
+              Add <i class="fa fa-arrow-right"></i>
+            </button>
+        </div>
+        <div class="d-flex j-center align-start" style="margin-left: auto; margin-right: auto;">
+            <textarea
+            rows="20"
+            class="create-input-control"
+            style="height: 400px; width: 470px;"
+            type="text"
+            formControlName="paragraph"
+            (keydown.enter)="addParagraph(paragraphForm)"
+            required
+            >
+            </textarea>
+        </div>
+      </div>
+    <div class="input-field-close-out" (mouseup)="removeParagraph(paragraphForm)">
+      <i class="fa fa-times"></i>
+    </div>
+</form>
+  

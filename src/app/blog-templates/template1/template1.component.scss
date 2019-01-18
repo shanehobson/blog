@@ -1,0 +1,217 @@
+@import '../../../sass/colors.scss';
+@import '../../../sass/breakpoints.scss';
+@import '../../../sass/layouts.scss';
+@import '../../../sass/buttons.scss';
+
+.blog-photograph-and-caption-container {
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.blog-photograph-container {
+    margin-top: 25px;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-height: 500px;
+
+    img {
+        width: 70%;
+        max-width: 400px;
+        border: 1px solid $grayBorder;
+        border-radius: 4px;
+    }
+}
+
+
+.blog-photo-caption {
+    padding: 15px;
+    border-right: 1px solid $grayBorder;
+    border-left: 1px solid $grayBorder;
+    border-bottom: 1px solid $grayBorder;
+    border-radius: 0 0 4px 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog-image-border {
+    border: 1px solid $grayBorder;
+    border-radius: 4px;
+}
+
+.blog-image-border-top {
+    border-bottom: 1px solid $grayBorder;
+    border-radius: 4px 4px 0 0;
+}
+
+.blog-title-image-border-top {
+    width: 100%;
+    height: 1px;
+    background-color: $grayBorder;
+}
+
+.blog-text-content-container {
+    padding: 10px;
+
+    p {
+        font-size: 16px;
+        line-height: 1.7;
+        margin-bottom: 10px;
+    }
+
+    div {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .blog-subtitle {
+        color: $richRed;
+        display: block;
+        font-family: 'Roboto Slab', serif;
+        font-size: 24px;
+        margin: 5px 0;
+    }
+}
+
+.blog-image-element-container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.section-title {
+    display: inline-block;
+    margin-left: 12px;
+    margin-bottom: 15px;
+}
+
+.section-byline {
+    display: inline-block;
+    margin-left: 12px;
+    margin-bottom: 10px;
+}
+
+.blog-image-element {
+    display: inline-block;
+    min-width: 300px;
+    max-width: 550px;
+    max-height: 300px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.blog-photograph-element-caption {
+    border-right: 1px solid $grayBorder;
+    border-left: 1px solid $grayBorder;
+    border-bottom: 1px solid $grayBorder;
+    border-radius:  0 0 4px 4px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog-entry-date-container {
+    margin-left: 12px;
+}
+
+.green-text {
+    color: $buttonGreen;
+    font-size: 22px;
+}
+
+.green-check {
+    color: $buttonGreen;
+    padding-left: 12px;
+    padding-top: 12px;
+    font-size: 18px;
+}
+
+@media only screen and (min-width: $largeScreenBreakpoint) {
+    .section-title {
+        display: block;
+        margin-top: 22px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        font-size: 34px;
+    }
+
+    .section-byline {
+        display: block;
+        margin-top: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .blog-entry-date-container {
+        margin-left: 0;
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .blog-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+        text-indent: 30px;
+    }
+
+    .blog-paragraph {
+        text-indent: 30px;
+    }
+}
+
+@media only screen and (max-width: $tablet-breakpoint) {
+    .blog-entry-container {
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: $mobile-breakpoint) {
+    .blog-entry-date-container,
+    .blog-photograph-container {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .blog-entry-container {
+        padding: 20px 10px;
+    }
+
+    .blog-text-content-container {
+        .blog-subtitle {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+    }
+
+    .section-title {
+        display: block;
+        margin-top: 0;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .section-byline {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .blog-paragraph {
+        text-indent: 25px;
+    }
+}

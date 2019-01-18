@@ -1,0 +1,48 @@
+<div *ngIf="!isLoading" class="d-flex j-center flex-column align-center" style="margin-bottom: 25px;">
+    <form class="input-field-form" enctype="multipart/form-data" style="margin-bottom: 25px;">
+        <div class="d-flex j-center flex-column align-center" style="margin-left: auto; margin-right: auto;">
+            <div style="padding: 0 5px 25px 5px;" class="d-flex j-center">
+                <button
+                  style="margin-top: 2px;"
+                  type="submit"
+                  class="rect-btn rect-btn_small rect-btn_gold"
+                  [disabled]="file === undefined ? true : false"
+                  (mouseup)="addVideo()"
+                  >
+                  Add <i class="fa fa-arrow-right"></i>
+                </button>
+            </div>
+            <div class="d-flex j-center" style="margin-left: auto; margin-right: auto;">
+                <input 
+                    class="image-input"
+                    type="file" 
+                    name="file"
+                    (change)="onFileChanged($event)" 
+                    #fileInput>
+            </div>
+          </div>
+        <div class="input-field-close-out" (mouseup)="removeVideo(videoForm)" style="padding-left: 35px; padding-top: 5px;">
+          <i class="fa fa-times"></i>
+        </div>
+    </form>
+    <div class="d-flex j-center align-center">
+      Caption
+    </div>
+    <form class="input-field-form">
+        <div class="d-flex j-center align-center" style="margin-left: auto; margin-right: auto;" [formGroup]="captionForm">
+            <div class="d-flex j-center align-start" style="margin-left: auto; margin-right: auto;">
+                <input 
+                class="create-input-control"
+                type="text"
+                (keyup)="addCaption(captionForm)"
+                formControlName="caption"
+                required
+                >
+            </div>
+          </div>
+    </form>
+</div>
+<div *ngIf="isLoading" class="d-flex j-center align-center">
+    <app-spinner></app-spinner>
+</div>
+    

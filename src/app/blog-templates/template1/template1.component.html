@@ -1,0 +1,95 @@
+<article class="blog-entry-container" [ngClass]="editPostMode ? 'tall' : ''" style="position: relative;">
+  <div *ngIf="editBlogMode && !isLoading" class="d-flex j-center" style="position: absolute; top: 15px; right: 15px;">
+    <div style="padding: 5px; cursor: pointer;">
+        <i class="fa fa-edit" (mouseup)="onEditPost()"></i>
+    </div>
+    <div style="padding: 5px; cursor: pointer;">
+        <i class="fa fa-trash" (mouseup)="onRemovePost()"></i>
+    </div>
+  </div>
+    <div *ngIf="!isLoading" style="margin: 0 auto; max-width: 650px;">
+      <div *ngIf="blogSubmitted" class="d-flex j-center align-center green-text" style="margin-top: 50px;">Success! <i class="fa fa-check green-check"></i></div>
+      <div *ngIf="blog.elements.length > 0 && editPostMode" class="d-flex j-center align-center">
+        <button class="rect-btn rect-btn_small rect-btn_green" (mouseup)="submitBlogPost()">Submit</button>
+      </div>
+      <div *ngIf="blog.elements.length > 0 && editPostMode" class="divider"></div>
+      <div style="position: relative">
+        <h3 *ngIf="!blogSubmitted" class="section-title">{{blog.title}}</h3>
+        <div *ngIf="editPostMode && !blogSubmitted" style="position: absolute; top: 5px; right: 10px;">
+            <div style="padding: 5px; cursor: pointer;">
+                <i class="fa fa-edit" (mouseup)="onEditTitle()"></i>
+            </div>
+        </div>
+      </div>
+      <div *ngIf="blog.author !== '' && !blogSubmitted" class="section-byline" style="position: relative;">
+          <p *ngIf="blog.author !== ''">By {{blog.author}}</p>
+          <div *ngIf="editPostMode" class="d-flex j-center" style="position: absolute; top: 0; right: 10px;">
+            <div style="padding: 5px; cursor: pointer;">
+                <i class="fa fa-edit" (mouseup)="onEditAuthor()"></i>
+            </div>
+            <div style="padding: 5px; cursor: pointer;">
+                <i class="fa fa-trash" (mouseup)="onRemoveAuthor()"></i>
+            </div>
+          </div>
+      </div>
+      <div *ngIf="!blogSubmitted" class="blog-entry-date-container" style="position: relative;">
+          <p><i class="fas fa-calendar-alt"></i> {{blog.date}}</p>
+          <div *ngIf="editPostMode" class="d-flex j-center" style="position: absolute; top: 0; right: 10px;">
+              <div style="padding: 5px; cursor: pointer;">
+                  <i class="fa fa-edit" (mouseup)="onEditDate()"></i>
+              </div>
+          </div>
+      </div>
+      <div *ngIf="blog.type === '1' && !blogSubmitted" class="blog-photograph-and-caption-container" style="margin: 25px auto 15px auto; position: relative">
+          <div *ngIf="editPostMode" class="d-flex j-space-between align-center;" style="position: absolute; top: 65px; right: -35px; cursor: pointer; width: 35px;">
+              <i class="fa fa-edit" (mouseup)="onEditTitlePictureButtonClicked()"></i>
+              <i class="fa fa-trash" (mouseup)="onRemoveTitlePictureButtonClicked()"></i>
+          </div>
+          <div class="blog-image-element-container" style="max-width: 600px" [ngClass]="blog.imageSubtitle !== '' ? 'blog-image-border' : ''">
+            <img src="{{blog.imageUrl}}" class="blog-image-element"> 
+            <div *ngIf="blog.imageSubtitle !== ''" class="blog-title-image-border-top"></div>
+            <div *ngIf="blog.imageSubtitle !== ''" style="display: flex; justify-content: center; padding: 2px 5px 10px 5px; margin: 0 auto;">
+              {{blog.imageSubtitle}}
+          </div>
+        </div>
+      </div>
+      <div *ngIf="!isLoading" class="blog-text-content-container">
+        <div *ngFor="let element of blog.elements; let i = index;" style="position: relative">
+          <div *ngIf="editPostMode" class="d-flex j-space-between align-center;" style="position: absolute; top: 25px; right: -35px; cursor: pointer; width: 35px;">
+            <i class="fa fa-edit" (mouseup)="onEditButtonClicked(i)"></i>
+            <i class="fa fa-trash" (mouseup)="onRemoveButtonClicked(i)"></i>
+          </div>
+          <h4 *ngIf="element.type === 'subtitle'" class="blog-subtitle">
+            {{element.content}}
+          </h4>
+          <p *ngIf="element.type === 'paragraph'"  class="blog-paragraph">
+            {{element.content}}
+          </p>
+          <div *ngIf="element.type === 'image'" class="d-flex j-center" style="margin: 25px auto; max-width: 400px;">
+            <div class="blog-image-element-container" [ngClass]="element.caption !== '' ? 'blog-image-border' : ''">
+                <img [src]="element.content" class="blog-image-element" style="max-width: 400px; max-height: 270px;">
+                <div *ngIf="element.caption !== ''" class="blog-title-image-border-top"></div>
+                <div *ngIf="element.caption !== ''" style="max-width: 270px; display: flex; justify-content: center; padding: 10px 5px;">{{element.caption}}</div>
+            </div>
+          </div>
+          <div *ngIf="element.type === 'video'" class="d-flex j-center" style="margin: 25px auto; max-width: 450px;">
+              <div class="blog-image-element-container" [ngClass]="element.caption !== '' ? 'blog-image-border' : ''">
+                  <video width="400"
+                  height="300"
+                  controls
+                  [src]="element.content"
+                  type="video/mp4"
+                  class="blog-image-element"
+                
+                  [ngClass]="element.caption !== '' ? 'blog-image-border-top' : ''">
+                  </video>
+                  <div *ngIf="element.caption !== ''" style="max-width: 270px; display: flex; justify-content: center; padding: 2px 5px 10px 5px;">{{element.caption}}</div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="isLoading" class="d-flex j-center align-center" style="width: 100%; height: 100%; margin: 50px auto;">
+        <app-spinner></app-spinner>
+    </div>
+</article>

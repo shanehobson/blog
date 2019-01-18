@@ -1,0 +1,234 @@
+@import './colors';
+
+/* Pseudo Class Styles */
+@mixin pseudoClass {
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    border-color: $disabledGray;
+    background-color: #ddd;
+    cursor: not-allowed;
+
+    &:hover, &:focus {
+      border-color: $disabledGray;
+      background-color: #eee;
+      color: #999;
+    }
+  }
+}
+
+/* Button Color Modifiers */
+@mixin colorModifier {
+
+  &_green {
+    border: 1px solid lighten($buttonGreen, 30);
+    color: #fff;
+    background-color: lighten($buttonGreen, 30);
+
+    &:hover, &:focus {
+      border: 1px solid lighten($buttonGreen, 20);
+      background-color: lighten($buttonGreen, 20);
+    }
+
+    &_invert {
+      color: lighten($buttonGreen, 30);
+      background-color: #fff;
+
+      &:hover, &:focus {
+        border: 1px solid lighten($buttonGreen, 20);
+        color: lighten($buttonGreen, 20);
+        background-color: #fff;
+      }
+    }
+  }
+
+  &_blue {
+    border: 1px solid lighten($warrantyBlue, 10);
+    color: #fff;
+    background-color: lighten($warrantyBlue, 10);
+
+    &:hover, &:focus {
+      border: 1px solid $warrantyBlue;
+      background-color: $warrantyBlue;
+    }
+
+    &_invert {
+      color: lighten($warrantyBlue, 10);
+      background-color: #fff;
+
+      &:hover, &:focus {
+        border: 1px solid $warrantyBlue;
+        color: $warrantyBlue;
+        background-color: #fff;
+      }
+    }
+  }
+
+  &_red {
+    border: 1px solid $richRed;
+    color: #fff;
+    background-color: $richRed;
+
+    &:hover, &:focus {
+      border: 1px solid darken($richRed, 10);
+      background-color: darken($richRed, 10);
+    }
+
+    &_invert {
+      color: $richRed;
+      background-color: #fff;
+
+      &:hover {
+        border: 1px solid darken($richRed, 10);
+        color: darken($richRed, 10);
+        background-color: #fff;
+      }
+    }
+  }
+
+  &_borderless, &_borderless:hover, &_borderless:focus {
+    border: none;
+  }
+
+&_gold {
+    border: 1px solid $gold;
+    color: #fff;
+    background-color: $gold;
+
+    &:hover, &:focus {
+      border: 1px solid darken($gold, 5);
+      background-color: darken($gold, 5);
+    }
+
+    &_invert {
+      color: $richRed;
+      background-color: #fff;
+
+      &:hover {
+        border: 1px solid darken($gold, 5);
+        color: darken($gold, 5);
+        background-color: #fff;
+      }
+    }
+  }
+
+  &_borderless, &_borderless:hover, &_borderless:focus {
+    border: none;
+  }
+}
+
+.rect-btn {
+  display: inline-block;
+  margin: 5px 0;
+  padding: 5px 20px;
+  border-radius: 4px;
+  border: none;
+  font-size: 24px;
+  font-weight: 200;
+  cursor: pointer;
+
+  /* Pseudo Class Styles */
+  @include pseudoClass;
+
+  /* Button Color Modifiers */
+  @include colorModifier;
+
+  /* Button Size Modifiers */
+  &_extra-small {
+    padding: 5px 8px;
+    font-size: 14px;
+  }
+
+  &_small {
+    font-size: 16px;
+  }
+
+  &_medium {
+    font-size: 20px;
+  }
+}
+
+.sq-btn {
+  height: 44px;
+  width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  border: 1px solid $disabledGray;
+  color: $disabledGray;
+  background-color: #fff;
+  cursor: pointer;
+
+  &__icon {
+    font-size: 36px;
+  }
+
+  /* Pseudo Class Styles */
+  @include pseudoClass;
+
+  /* Button Color Modifiers */
+  @include colorModifier;
+
+  /* Button Size Modifiers */
+  &_extra-small {
+    height: 22px;
+    width: 22px;
+
+    & .sq-btn__icon {
+      font-size: 14px;
+    }
+  }
+
+  &_small {
+    height: 28px;
+    width: 28px;
+
+    & .sq-btn__icon {
+      font-size: 20px;
+    }
+  }
+
+  &_medium {
+    height: 36px;
+    width: 36px;
+
+    & .sq-btn__icon {
+      font-size: 28px;
+    }
+  }
+}
+
+.create-button {
+  background-color: $richRed;
+  color: #fff;
+  height: 30px;
+  width: 65px;
+  border: 1px solid $richRed;
+  border-radius: 4px;
+  outline: none;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+
+  &:active {
+      background-color: #fff;
+      color: $richRed;
+  }
+
+  &:hover {
+      background-color: #fff;
+      color: $richRed; 
+  }
+
+  &:disabled {
+      color: #333;
+      background-color: $tastyGrey;
+      cursor: default;
+      border-color: darken($tastyGrey, 20);
+  }
+}

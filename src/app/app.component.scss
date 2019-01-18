@@ -1,0 +1,126 @@
+@import '../sass/colors.scss';
+@import '../sass/layouts.scss';
+@import '../sass/breakpoints.scss';
+
+// NavBar Styles
+.navBar-container {
+    height: 60px;
+    width: 100%;
+    background-color: $navbarBackground;
+    color: $tastyGrey;
+
+    a {
+        color: $tastyGrey;
+        font-size: 16px;
+
+        &:hover {
+            color: $richRed;
+        }
+    
+        &:active {
+            color: $richRed;
+        }
+    
+        &.selected {
+            color: $richRed;
+        }
+    }
+
+}
+
+.navBar-links-container {
+    width: 200px;
+}
+
+.navBar-logo-picture {
+    height: 45px; 
+    margin: auto 0;
+}
+
+.hamburger-menu {
+    margin: auto 0;
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger-menu > div {
+    width: 35px;
+    height: 5px;
+    background-color: $richRed;
+    margin: 6px 0;
+}
+
+.show-hamburger {
+    height: 140px;
+    background-color: $navbarBackground;
+    visibility: show;
+    -webkit-transition: height .6s ease-in-out; /* Safari */
+    transition: height .6s ease-in-out;
+    overflow: hidden;
+
+    div {
+        display: block;
+        -webkit-transition: display .8s ease-in-out; /* Safari */
+        transition: display .8s ease-in-out;
+    }
+}
+
+.hide-hamburger {
+    height: 0px;
+    background-color: $navbarBackground;
+    -webkit-transition: height .6s ease-in-out, visibility .6s ease-in-out; /* Safari */
+    transition: height .6s ease-in-out, visibility .6s ease-in-out;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.hamburger-inner-content {
+    margin-top: 10px;
+    a {
+        color: $tastyGrey;
+        font-size: 18px;
+
+        &:hover {
+            color: $richRed;
+        }
+    
+        &:active {
+            color: $richRed;
+            outline: none;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    
+        &.selected {
+            color: $richRed;
+        }
+    }
+}
+
+.hamburger-menu-content {
+    display: none;
+}
+
+.hamburger-inner-content > div {
+    margin: 0 auto;
+    text-align: center;
+    padding: 5px;
+}
+
+  @media only screen and (max-width: $mobile-breakpoint) {
+    .navBar-links-container {
+        display: none;
+    }
+
+    .hamburger-menu-content {
+        display: block;
+    }
+
+    .hamburger-menu {
+        margin: auto 0;
+        display: block;
+        cursor: pointer;
+    }
+  }

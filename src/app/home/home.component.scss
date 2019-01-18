@@ -1,0 +1,66 @@
+@import '../../sass/colors.scss';
+@import '../../sass/layouts.scss';
+@import '../../sass/breakpoints.scss';
+@import '../../sass/buttons.scss';
+
+.home-container {
+    margin: 30px auto 20px auto;
+    display: grid;
+    grid-template-columns: 69% 31%;
+    grid-gap: 30px;
+
+    .home-main-content-container {
+        min-height: 1000px; 
+    }
+
+    .home-aside-content-container {
+        min-height: 350px;
+        max-height: 400px;
+        border: 1px solid $grayBorder;
+        border-radius: 8px;
+        padding: 15px 10px;
+        background-color: #fff;
+        margin-bottom: 30px;
+    }
+
+    
+    .home-aside-about-content-container {
+        border: 1px solid $grayBorder;
+        border-radius: 8px;
+        padding: 15px 10px;
+        background-color: #fff;
+        margin-bottom: 30px;
+    }
+}
+
+.individual-blog-container {
+    margin-bottom: 30px;
+}
+
+@media only screen and (max-width: $largeScreenBreakpoint) {
+    .home-container {
+        grid-template-columns: 67% 33%;
+        grid-gap: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 950px;
+    }
+}
+
+@media only screen and (max-width: $tablet-breakpoint) {
+    .home-container {
+        display: block;
+        margin: 0;
+        width: 100%;
+
+        .home-aside-content-container {
+            min-height: 230px;
+        }
+    }
+}
+
+@media only screen and (max-width: $mobile-breakpoint) {
+    .individual-blog-container {
+        margin-bottom: 0;
+    }
+}

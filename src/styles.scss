@@ -1,0 +1,154 @@
+@import '~normalize.css/normalize.css';
+@import './sass/colors.scss';
+@import './sass/layouts.scss';
+@import './sass/breakpoints.scss';
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+html, body, p {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    color: #6B6B6B;
+    background-color: #F2F2F2;
+    word-wrap: break-word;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Slab', serif;
+}
+
+button {
+    border: none;
+}
+
+a {
+    color: #DA4453;
+    text-decoration: none;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+a:hover,
+a:focus {
+    color: #DADADA;
+    text-decoration: none;
+}
+
+a:focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+.section-title {
+    font-family: 'Roboto Slab', serif;
+    color: #444;
+    font-size: 28px;
+    line-height: 30.8px;
+    margin-bottom: 25px;
+    display: block;
+    font-weight: bold;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+
+    &:hover {
+        color: $richRed;
+    }
+
+    &:active {
+        color: $richRed;
+    }
+
+    &.selected {
+        color: $richRed;
+    }
+}
+
+// Input Styles
+.input-field {
+    margin: 0 auto 5px auto;
+    padding: 10px;
+
+    label, input {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .input-label {
+        padding-left: 38px;
+    }
+
+    input {
+        border: 1px solid #333;
+        border-radius: 8px;
+        padding-left: 8px;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+        height: 28px;
+        width: 200px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+.input-field-form {
+    position: relative;
+}
+
+.input-field-close-out {
+    position: absolute;
+    top: -5px;
+    right: -30px;
+    cursor: pointer;
+}
+
+.create-input-label {
+    margin: 0 auto;
+    text-align: center;
+    padding-right: 70px;
+}
+
+.create-input-control {
+    max-width: 500px;
+    min-width: 300px;
+    margin-right: 0;
+    margin-left: 0;
+    height: 30px;
+    border: 1px solid $mediumGray;
+    border-radius: 4px;
+}
+
+.create-input-fields-container {
+    margin: 20px auto 10px auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.divider {
+    height: 1px;
+    width: 80%;
+    background-color: $grayBorder;
+    margin: 15px auto;
+}
+
+@media only screen and (max-width: $tablet-breakpoint) {
+    .section-title{
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    } 
+}

@@ -1,0 +1,36 @@
+@import '../../sass/colors.scss';
+@import '../../sass/breakpoints.scss';
+
+.aside-container {
+    padding: 12px;
+}
+
+.aside-subtitle {
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    color: #636467;
+    line-height: 1.5;
+}
+
+.headshot-image {
+    height:150px;
+    width: 120px;
+    border: 1px solid $grayBorder;
+    border-radius: 100%;
+}
+
+.about-me-container {
+    p {
+        text-indent: 15px;
+        margin-bottom: 8px;
+    }
+}
+
+@media only screen and (max-width: $tablet-breakpoint) {
+    .aside-container {
+        padding-top: 20px;
+    }
+}

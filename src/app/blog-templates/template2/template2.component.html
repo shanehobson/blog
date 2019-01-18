@@ -1,0 +1,25 @@
+<article class="blog-entry-container" [ngClass]="editPostMode ? 'tall' : ''">
+    <div style="margin: 0 auto; max-width: 450px;">
+        <a href="#" class="section-title">{{blog.title}}</a>
+        <div class="blog-entry-date-container">
+            <p><i class="fas fa-calendar-alt"></i> {{blog.date}}</p>
+        </div>
+        <div class="blog-text-content-container">
+            <div *ngFor="let element of blog.elements; let i = index;" style="position: relative">
+                <div *ngIf="editPostMode" class="d-flex j-space-between align-center;" style="position: absolute; top: 13px; right: -25px; cursor: pointer; width: 35px;">
+                <i class="fa fa-edit" (mouseup)="onEditButtonClicked(i)"></i>
+                <i class="fa fa-trash" (mouseup)="onRemoveButtonClicked(i)"></i>
+                </div>
+                <h4 class="blog-subtitle" *ngIf="element.type === 'subtitle'">
+                    {{element.content}}
+                </h4>
+                <p *ngIf="element.type === 'paragraph'">
+                    {{element.content}}
+                </p>
+                <div class="d-flex j-center align-center" style="max-width: 400px; max-height: 400px;" *ngIf="element.type === 'image'">
+                    <img [src]="element.content">
+                  </div>
+            </div>
+        </div>
+    </div>
+</article>
