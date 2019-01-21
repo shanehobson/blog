@@ -40,7 +40,7 @@ testem.log
 Thumbs.db
 
 # server files
-/routes.
+/routes..
 
 # local (unused) database.
 /database
