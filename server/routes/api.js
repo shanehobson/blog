@@ -13,6 +13,7 @@ const multiparty = require('multiparty');
 const app = express();
 const axios = require('axios');
 const MongoClient = require('mongodb').MongoClient;
+const uuidv1 = require('uuid/v1');
 
 /* Body Parser */
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -37,7 +38,7 @@ const connection = mongoose.connection;
 
 /* AWS Config */
 AWS.config.update({
-  accessKeyId: process.env.AWS_Access_Key_Id,
+  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
   secretAccessKey: process.env.AWSSecretKey
 });
 AWS.config.setPromisesDependency(bluebird);
@@ -88,13 +89,16 @@ router.post('/images', (request, response) => {
 /* Get Posts from DB and send to front end */
 router.get('/posts', function(req, res, next) {
   Post.find({}, function (err, products) {
-    if (err) return next(err);
+    if (err) {
+        console.log(err);
+        return next(err);
+    }
     console.log('success get posts from db');
     res.status(200).json(products);
   });
 });
 
-/* Add New Blog Post to DB */
+/* Add New Blog Post to DB or Update Existing Post */
 router.post('/addPost', (req, res) => {
   console.log('entered POST new blog post endpoint');
   console.log(req.body);
@@ -111,6 +115,7 @@ router.post('/addPost', (req, res) => {
     });
   } else {
     console.log('creating new post');
+    req.body['_id'] = uuidv1();
     Post.create(req.body);
   }
   console.log('Success adding post to DB');
