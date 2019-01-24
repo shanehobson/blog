@@ -43,7 +43,21 @@
         grid-gap: 15px;
         margin-left: auto;
         margin-right: auto;
-        max-width: 950px;
+        max-width: 900px;
+    }
+
+    .home-aside-content-container {
+        margin-bottom: 15px;
+        margin-top: 0;
+    }
+
+    .home-aside-about-content-container  {
+        margin-bottom: 15px;
+        margin-top: 0;
+    }
+
+    .individual-blog-container {
+        margin-bottom: 15px;
     }
 }
 
@@ -55,12 +69,21 @@
 
         .home-aside-content-container {
             min-height: 230px;
+            margin: 0;
+            border-radius: 0;
         }
+
+        .home-aside-about-content-container  {
+            margin: 0;
+            border-radius: 0;
+        }
+    }
+
+    .individual-blog-container {
+        margin-bottom: 0px;
     }
 }
 
-@media only screen and (max-width: $mobile-breakpoint) {
-    .individual-blog-container {
-        margin-bottom: 0;
-    }
-}
+// @media only screen and (max-width: $mobile-breakpoint) {
+
+// }
