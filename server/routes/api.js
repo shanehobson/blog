@@ -14,6 +14,8 @@ const app = express();
 const axios = require('axios');
 const MongoClient = require('mongodb').MongoClient;
 const uuidv1 = require('uuid/v1');
+const Schema = mongoose.Schema;
+const ObjectId = Schema.ObjectId;
 
 /* Body Parser */
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -115,7 +117,9 @@ router.post('/addPost', (req, res) => {
     });
   } else {
     console.log('creating new post');
-    req.body['_id'] = uuidv1();
+    const uniqueId = uuidv1();
+    const id = new ObjectId(uniqueId)
+    req.body['_id'] = id;
     Post.create(req.body);
   }
   console.log('Success adding post to DB');
