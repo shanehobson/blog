@@ -818,8 +818,11 @@ var Template1Component = /** @class */ (function () {
         this.emitRemoveAuthor.emit();
     };
     Template1Component.prototype.onRemovePost = function () {
-        this.blogService.removeBlogPost(this.blog._id);
-        this.postDeleted.emit(this.blog._id);
+        var confirmed = window.confirm('Are you sure you want to delete this blog post?');
+        if (confirmed) {
+            this.blogService.removeBlogPost(this.blog._id);
+            this.postDeleted.emit(this.blog._id);
+        }
     };
     Template1Component.prototype.onEditPost = function () {
         console.log('Edit post called');
@@ -980,7 +983,7 @@ var Template2Component = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  contact works!\n</p>\n"
+module.exports = "<div class=\"blog-entry-container\">\n  <div class=\"section-title\">Contact</div>\n</div>"
 
 /***/ }),
 

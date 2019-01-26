@@ -87,8 +87,11 @@ export class Template1Component implements OnInit {
   }
 
   onRemovePost() {
-    this.blogService.removeBlogPost(this.blog._id);
-    this.postDeleted.emit(this.blog._id);
+    const confirmed = window.confirm('Are you sure you want to delete this blog post?');
+    if (confirmed) {
+      this.blogService.removeBlogPost(this.blog._id);
+      this.postDeleted.emit(this.blog._id);
+    }
   }
 
   onEditPost() {
