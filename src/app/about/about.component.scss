@@ -1,0 +1,51 @@
+@import '../../sass/layouts.scss';
+@import '../../sass/breakpoints.scss';
+@import '../../sass/colors.scss';
+
+.about-section-container {
+    padding: 30px;
+}
+
+.page-title {
+    font-size: 42px;
+    margin-top: 16px;
+}
+
+.about-body-container {
+    margin: 10px auto;
+    max-width: 950px;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.headshot-image {
+    height:150px;
+    width: 120px;
+    border: 1px solid $grayBorder;
+    border-radius: 100%;
+}
+
+.about-me-container {
+    p {
+        text-indent: 15px;
+        margin-bottom: 8px;
+    }
+}
+
+@media only screen and (max-width: $mobile-breakpoint) {
+    .about-body-container {
+        margin: 0;
+        padding-top: 15px;
+        border-radius: 0;
+    }
+ 
+     .about-section-container {
+         padding: 0;
+     }
+
+     .page-title {
+         margin-top: 0;
+         padding-top: 0;
+         margin-bottom: 15px;
+     }
+ }
