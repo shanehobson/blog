@@ -90,12 +90,12 @@
 
     .home-aside-content-container {
         min-height: 230px;
-        margin: 0;
-        border-radius: 0;
+        margin: 0 !important;
+        border-radius: 0 !important;
     }
 
     .home-aside-about-content-container  {
-        margin: 0;
-        border-radius: 0;
+        margin: 0 !important;
+        border-radius: 0 !important;
     }
 }

@@ -14,14 +14,14 @@
       </div>
       <div *ngIf="blog.elements.length > 0 && editPostMode" class="divider"></div>
       <div style="position: relative">
-        <h3 *ngIf="!blogSubmitted" class="section-title">{{blog.title}}</h3>
+        <h3 *ngIf="!blogSubmitted" class="section-title blog-section-title">{{blog.title}}</h3>
         <div *ngIf="editPostMode && !blogSubmitted" style="position: absolute; top: 5px; right: 10px;">
             <div style="padding: 5px; cursor: pointer;">
                 <i class="fa fa-edit" (mouseup)="onEditTitle()"></i>
             </div>
         </div>
       </div>
-      <div *ngIf="blog.author !== '' && !blogSubmitted" class="section-byline" style="position: relative;">
+      <div *ngIf="blog.author !== '' && !blogSubmitted" class="section-byline" style="position: relative; text-align: center;">
           <p *ngIf="blog.author !== ''">By {{blog.author}}</p>
           <div *ngIf="editPostMode" class="d-flex j-center" style="position: absolute; top: 0; right: 10px;">
             <div style="padding: 5px; cursor: pointer;">
@@ -32,7 +32,7 @@
             </div>
           </div>
       </div>
-      <div *ngIf="!blogSubmitted" class="blog-entry-date-container" style="position: relative;">
+      <div *ngIf="!blogSubmitted" class="blog-entry-date-container" style="position: relative;  text-align: center; margin-bottom: 0; padding-bottom: 0;">
           <p><i class="fas fa-calendar-alt"></i> {{blog.date}}</p>
           <div *ngIf="editPostMode" class="d-flex j-center" style="position: absolute; top: 0; right: 10px;">
               <div style="padding: 5px; cursor: pointer;">
