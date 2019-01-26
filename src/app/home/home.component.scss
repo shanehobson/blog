@@ -80,10 +80,12 @@
     }
 
     .individual-blog-container {
-        margin-bottom: 0px;
+        margin: 30px;
     }
 }
 
-// @media only screen and (max-width: $mobile-breakpoint) {
-
-// }
+@media only screen and (max-width: $mobile-breakpoint) {
+    .individual-blog-container {
+        margin: 0;
+    }
+}
