@@ -1,7 +1,7 @@
 @import '../../sass/colors.scss';
 @import '../../sass/breakpoints.scss';
 
-.aside-container {
+.aside-about-container {
     padding: 12px;
 }
 
@@ -30,7 +30,7 @@
 }
 
 @media only screen and (max-width: $tablet-breakpoint) {
-    .aside-container {
+    .aside-about-container {
         padding-top: 20px;
     }
 }

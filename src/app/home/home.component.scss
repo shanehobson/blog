@@ -66,26 +66,36 @@
         display: block;
         margin: 0;
         width: 100%;
-
-        .home-aside-content-container {
-            min-height: 230px;
-            margin: 0;
-            border-radius: 0;
-        }
-
-        .home-aside-about-content-container  {
-            margin: 0;
-            border-radius: 0;
-        }
     }
 
     .individual-blog-container {
         margin: 30px;
+    }
+
+    .home-aside-content-container {
+        margin-left:30px;
+        margin-right: 30px;
+    }
+
+    .home-aside-about-content-container  {
+        margin-left:30px;
+        margin-right: 30px;
     }
 }
 
 @media only screen and (max-width: $mobile-breakpoint) {
     .individual-blog-container {
         margin: 0;
+    }
+
+    .home-aside-content-container {
+        min-height: 230px;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .home-aside-about-content-container  {
+        margin: 0;
+        border-radius: 0;
     }
 }

@@ -101,11 +101,15 @@
         padding: 0;
         width: 100%;
     }
+
+    .blog-entry-container {
+        border-radius: 8px;
+    }
 }
 
 @media only screen and (max-width: $mobile-breakpoint) {
     .blog-entry-container {
-        padding: 8px 20px;
+        padding: 25px 20px 0 20px;
         border-bottom: 1px solid $grayBorder;
         border-radius: 0;
     
