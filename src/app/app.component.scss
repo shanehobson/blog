@@ -2,6 +2,20 @@
 @import '../sass/layouts.scss';
 @import '../sass/breakpoints.scss';
 
+.app-container {
+    min-height: 90vh;
+}
+
+.footer {
+    height: 90px;
+    min-height: 2vh;
+    background-color: $navbarBackground;
+    color: $tastyGrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 // NavBar Styles
 .navBar-container {
     height: 60px;
