@@ -16,6 +16,7 @@ const MongoClient = require('mongodb').MongoClient;
 const uuidv1 = require('uuid/v1');
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
+const emailer = require('./emailer');
 
 /* Body Parser */
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -159,6 +160,14 @@ router.get('/getPost', (req, res) => {
     }
     res.status(200).send(data);
   });
+});
+
+/* Post new member to mailing list */
+router.post('/addToMailingList', (req, res) => {
+  console.log('entered POST new mailing list recipient endpoint');
+  console.log(req.body);
+  emailer.sendEmail(req, res);
+  // res.status(200).send('Recipient added to mailing list');
 });
 
 module.exports = router;

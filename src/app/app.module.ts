@@ -10,6 +10,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import {ColorService} from './services/colorService';
 import {BlogService} from './services/blogService';
+import {FormService} from './services/form.service';
 import { RouterModule, Routes } from '@angular/router';
 import { Template1Component } from './blog-templates/template1/template1.component';
 import { AsideComponent } from './aside/aside.component';
@@ -65,7 +66,7 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [  ColorService, BlogService ],
+  providers: [  ColorService, BlogService, FormService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

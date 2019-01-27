@@ -12,7 +12,7 @@
   &-label {
     display: block;
     margin-bottom: 6px;
-    font-size: 1rem;
+    font-size: 14px;
 
     &_blue {
       color: darken($warrantyBlue, 10);
@@ -40,7 +40,7 @@
     outline: none;
 
     &:focus {
-      border: 1px solid $warrantyBlue;
+      border: 1px solid $richRed;
     }
 
     &_readonly, &_readonly:focus {
