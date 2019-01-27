@@ -1,0 +1,24 @@
+<aside class="aside-container">
+    <div class="d-flex j-center" style="height:37px">
+        <h5 class="aside-subtitle">Join Our Mailing List</h5>
+    </div>
+    <div>
+        <form [formGroup]="mailingListForm" (ngSubmit)="submitMailingList(maliingListForm)" class="mailing-list-form">
+          <div class="input-group_col-1" style="margin-bottom: 0">
+              <div class="input-field" style="margin-bottom: 0">
+                  <label class="input-label" style="padding-left: 5px;">Name *</label>
+                <input formControlName="name" type="text" class="input-control" required>
+              </div>
+          </div>
+          <div class="input-group_col-1">
+              <div class="input-field">
+                  <label class="input-label" style="padding-left: 5px;">Email *</label>
+                <input formControlName="email" type="email" class="input-control" required>
+              </div>
+          </div>
+          <div class="d-flex j-center align-center">
+            <button class="rect-btn rect-btn_red rect-btn_small" type="submit" style="margin-bottom: 0;" [disabled]="!mailingListForm.valid">Join</button>
+          </div>
+          </form>
+    </div>
+</aside>

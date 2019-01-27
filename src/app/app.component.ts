@@ -26,6 +26,10 @@ export class AppComponent implements OnInit {
     
   }
 
+  onActivate(event) {
+    window.scroll(0,0);
+}
+
   toggleHamburgerMenu() {
     this.showHamburgerMenuContent = !this.showHamburgerMenuContent;
   }

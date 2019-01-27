@@ -1,0 +1,20 @@
+@import '../../sass/colors.scss';
+@import '../../sass/layouts.scss';
+@import '../../sass/breakpoints.scss';
+@import '../../sass/buttons.scss';
+@import '../../sass/forms.scss';
+
+.aside-subtitle {
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    margin-top: 0;
+    color: #636467;
+    line-height: 1.5;
+}
+
+// .mailing-list-form {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+// }

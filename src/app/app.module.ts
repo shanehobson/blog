@@ -23,6 +23,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { DateInputComponent } from './create/date-input/date-input.component';
 import { AuthorInputComponent } from './create/author-input/author-input.component';
 import { AsideAboutComponent } from './aside-about/aside-about.component';
+import { AsideMailingListComponent } from './aside-mailing-list/aside-mailing-list.component';
 
 const appRoutes: Routes = [
   { path: 'about', component: AboutComponent },
@@ -49,7 +50,8 @@ const appRoutes: Routes = [
     SpinnerComponent,
     DateInputComponent,
     AuthorInputComponent,
-    AsideAboutComponent
+    AsideAboutComponent,
+    AsideMailingListComponent
   ],
   imports: [
     BrowserModule,

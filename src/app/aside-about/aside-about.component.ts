@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-aside-about',
@@ -7,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AsideAboutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router,) { }
 
   ngOnInit() {
+  
   }
 
+  handleAboutClicked() {
+    this.router.navigate(['/', 'about']);
+  }
 }
 
