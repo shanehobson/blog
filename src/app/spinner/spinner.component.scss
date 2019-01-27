@@ -1,3 +1,4 @@
+@import '../../sass/colors.scss';
 
 .spinner19 {
     margin: 25px auto;
@@ -16,11 +17,21 @@
     display: inline-block;
     position: absolute;
     top: 0;
-    background-color: lighten(#1db954, 30);
     border-radius: 100%;
-    
     -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
     animation: sk-bounce 2.0s infinite ease-in-out;
+
+    &.green {
+      background-color: lighten($buttonGreen, 30);
+    }
+
+    &.red {
+      background-color: lighten($richRed, 10);
+    }
+
+    &.default {
+      background-color: #333;
+    }
   }
   
   .dot2 {

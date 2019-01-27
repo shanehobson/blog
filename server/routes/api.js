@@ -167,7 +167,6 @@ router.post('/addToMailingList', (req, res) => {
   console.log('entered POST new mailing list recipient endpoint');
   console.log(req.body);
   emailer.sendEmail(req, res);
-  // res.status(200).send('Recipient added to mailing list');
 });
 
 module.exports = router;

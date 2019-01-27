@@ -14,5 +14,14 @@
 }
 
 .mailing-list-success-message {
-    color: $richRed;
+    color: lighten($buttonGreen, 15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    text-align: center;
+
+    i {
+        font-size: 18px;
+    }
 }

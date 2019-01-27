@@ -1,5 +1,5 @@
 <div class="app-container">
-    <div class="navBar-container">
+    <div *ngIf="!isLoading" class="navBar-container">
         <div class="narrow-nav-container d-flex align-center j-space-between">
           <div style="padding-top: 9px;">
             <img src="../assets/images/logo-reduced.png" alt="" class="navBar-logo-picture">
@@ -23,11 +23,14 @@
             <div><a (mouseup)="handleContactClicked()"  [ngClass]="this.colorService.getActivatedRoute('/contact')">Contact</a></div>
         </div>
       </div>
-      <div>
+      <div *ngIf="!isLoading">
         <router-outlet  (activate)="onActivate($event)"></router-outlet>
       </div>
+      <div *ngIf="isLoading" class="d-flex j-center align-center" style="margin: 200px auto 0 auto">
+        <app-spinner [color]="'red'"></app-spinner>
+      </div>
 </div>
-<div class="footer">
+<div *ngIf="!isLoading" class="footer">
     &copy; 2019 Hobson Web Solutions
 </div>
 

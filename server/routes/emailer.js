@@ -21,7 +21,7 @@ module.exports.sendEmail = (req, res) => {
 
     const mailOptions = {
         from: 'hobsonwebsolutions@gmail.com', // sender address
-        to: 'cameron@pitching-theory.com', // list of receivers
+        to: 'shanehobson1@gmail.com', // list of receivers cameron@pitchingtheory.com
         subject: `New Mailing List Member: ${name}`,
         html: html //can be text
     };
@@ -29,11 +29,11 @@ module.exports.sendEmail = (req, res) => {
     transporter.sendMail(mailOptions, (error, info) => {
         if(error){
             console.log(error);
-            res.json({yo: 'error'});
+            // res.status(400).send(error);
         }else{
             console.log('Message sent: ' + info.response);
-            res.json({yo: info.response});
+            //   res.status(200).send('Recipient added to mailing list');
         };
     });
-    res.send('Success');
+    res.status(200).send();
 }

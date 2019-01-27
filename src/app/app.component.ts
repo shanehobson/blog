@@ -11,8 +11,10 @@ import {MatToolbarModule} from '@angular/material/toolbar'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+
   title = 'pitching-theory-app';
   showHamburgerMenuContent = false;
+  isLoading = true;
 
   constructor(
     private router: Router,
@@ -23,7 +25,9 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 1400)
   }
 
   onActivate(event) {

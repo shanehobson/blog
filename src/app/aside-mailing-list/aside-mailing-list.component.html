@@ -1,5 +1,5 @@
 <aside class="aside-container">
-    <div class="d-flex j-center" style="height:37px">
+    <div *ngIf="!formSubmission" class="d-flex j-center" style="height:37px">
         <h5 class="aside-subtitle">Join Our Mailing List</h5>
     </div>
     <div *ngIf="!formLoading && !formSubmission">
@@ -22,9 +22,9 @@
           </form>
     </div>
     <div *ngIf="formLoading" class="d-flex j-center align-center;">
-      <app-spinner></app-spinner>
+      <app-spinner [color]="'red'"></app-spinner>
     </div>
     <div *ngIf="formSubmission" class="d-flex j-center align-center;" class="mailing-list-success-message">
-      <p>Welcome to the mailing list! <i class="fas fa-baseball-ball"></i></p>
+      <p>You've been added to the mailing list! <i class="fas fa-check"></i></p>
     </div>
 </aside>

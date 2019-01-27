@@ -38,7 +38,7 @@ export class AsideMailingListComponent implements OnInit {
       setTimeout(() => {
         this.formLoading = false;
         this.formSubmission = true;
-      }, 400);
+      }, 800);
     });
   }
 

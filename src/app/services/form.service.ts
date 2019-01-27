@@ -13,9 +13,7 @@ export class FormService {
 
   addtoMailingList(name, email) { 
     const post = { name, email };
-    const url = this.addtoMailingListUrl;
-    // const options = { headers: new HttpHeaders().set('Content-Type', 'application/json') };   
-    // options['headers'].append('Response-Type', 'text');     
+    const url = this.addtoMailingListUrl;     
     return new Promise((resolve, reject) => {
         this.http.post(url, post)
             .subscribe(data => {
