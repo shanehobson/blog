@@ -9,7 +9,7 @@
 .page-title {
     font-size: 42px;
     margin-top: 20px;
-    margin-bottom: 30px !important;
+    margin-bottom: 20px;
 }
 
 .about-body-container {
@@ -20,10 +20,14 @@
 }
 
 .headshot-image {
-    height:150px;
-    width: 120px;
+    height:250px;
+    width: 200px;
     border: 1px solid $grayBorder;
     border-radius: 100%;
+
+    &.mobile {
+        display: none;
+    }
 }
 
 .about-me-container {
@@ -43,7 +47,7 @@
 @media only screen and (max-width: $mobile-breakpoint) {
     .about-body-container {
         margin: 0;
-        padding-top: 15px;
+        padding: 15px 30px 30px 30px;
         border-radius: 0;
     }
  
@@ -56,4 +60,17 @@
          padding-top: 0;
          margin-bottom: 15px;
      }
+
+     .headshot-image {
+         &.mobile {
+            height:150px;
+            width: 120px;
+            display: inline-block;
+         }
+
+         &.largeScreen {
+             display: none;
+         }
+        
+    }
  }
