@@ -33,7 +33,7 @@
           </div>
       </div>
       <div *ngIf="!blogSubmitted" class="blog-entry-date-container" style="position: relative;  text-align: center; margin-bottom: 0; padding-bottom: 0;">
-          <p><img [src]="'../../../assets/images/calendar.png'" style="Height: 26px; width: 26px; margin-right: 3px; margin-bottom: -10px;"> {{blog.date}}</p>
+          <p><img [src]="'../../../assets/images/calendar.png'" style="Height: 26px; width: 26px; margin-right: 3px; margin-bottom: -8px;"> {{blog.date}}</p>
           <div *ngIf="editPostMode" class="d-flex j-center" style="position: absolute; top: 0; right: 10px;">
               <div style="padding: 5px; cursor: pointer;">
                   <i class="fa fa-edit" (mouseup)="onEditDate()"></i>
