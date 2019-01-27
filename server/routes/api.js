@@ -118,9 +118,6 @@ router.post('/addPost', (req, res) => {
     });
   } else {
     console.log('creating new post');
-    // const uniqueId = uuidv1();
-    // const id = new ObjectId(uniqueId)
-    // req.body['_id'] = id;
     Post.create(req.body);
   }
   console.log('Success adding post to DB');

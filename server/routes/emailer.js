@@ -21,7 +21,7 @@ module.exports.sendEmail = (req, res) => {
 
     const mailOptions = {
         from: 'hobsonwebsolutions@gmail.com', // sender address
-        to: 'shanehobson1@gmail.com', // list of receivers cameron@pitchingtheory.com
+        to: 'cameron@pitchingtheory.com', // list of receivers
         subject: `New Mailing List Member: ${name}`,
         html: html //can be text
     };

@@ -25,10 +25,12 @@ import { DateInputComponent } from './create/date-input/date-input.component';
 import { AuthorInputComponent } from './create/author-input/author-input.component';
 import { AsideAboutComponent } from './aside-about/aside-about.component';
 import { AsideMailingListComponent } from './aside-mailing-list/aside-mailing-list.component';
+import { DownloadsComponent } from './downloads/downloads.component';
 
 const appRoutes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'downloads', component: DownloadsComponent },
   { path: 'create', component: CreateComponent },
   { path: 'edit', component: HomeComponent },
   { path: '', component: HomeComponent }
@@ -52,7 +54,8 @@ const appRoutes: Routes = [
     DateInputComponent,
     AuthorInputComponent,
     AsideAboutComponent,
-    AsideMailingListComponent
+    AsideMailingListComponent,
+    DownloadsComponent
   ],
   imports: [
     BrowserModule,

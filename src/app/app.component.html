@@ -8,6 +8,7 @@
             <div style="margin: auto 0"><a (mouseup)="handleHomeClicked()" [ngClass]="this.colorService.getActivatedRoute('/')">Home</a></div>
             <div style="margin: auto 0"><a (mouseup)="handleAboutClicked()" [ngClass]="this.colorService.getActivatedRoute('/about')">About</a></div>
             <div style="margin: auto 0"><a (mouseup)="handleContactClicked()" [ngClass]="this.colorService.getActivatedRoute('/contact')">Contact</a></div>
+            <div style="margin: auto 0"><a (mouseup)="handleDownloadsClicked()" [ngClass]="this.colorService.getActivatedRoute('/downloads')">Downloads</a></div>
           </div>
           <div class="hamburger-menu" (mouseup)="toggleHamburgerMenu()">
             <div></div>
@@ -21,6 +22,7 @@
             <div><a (mouseup)="handleHomeClicked()" [ngClass]="this.colorService.getActivatedRoute('/')">Home</a></div>
             <div><a (mouseup)="handleAboutClicked()" [ngClass]="this.colorService.getActivatedRoute('/about')">About</a></div>
             <div><a (mouseup)="handleContactClicked()"  [ngClass]="this.colorService.getActivatedRoute('/contact')">Contact</a></div>
+            <div><a (mouseup)="handleDownloadsClicked()" [ngClass]="this.colorService.getActivatedRoute('/downloads')">Downloads</a></div>
         </div>
       </div>
       <div *ngIf="!isLoading">

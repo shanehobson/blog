@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.isLoading = false;
-    }, 1400)
+    }, 1800)
   }
 
   onActivate(event) {
@@ -51,5 +51,10 @@ export class AppComponent implements OnInit {
   handleContactClicked() {
     this.showHamburgerMenuContent = false;
     this.router.navigate(['/', 'contact']);
+  }
+
+  handleDownloadsClicked() {
+    this.showHamburgerMenuContent = false;
+    this.router.navigate(['/', 'downloads']);
   }
 }

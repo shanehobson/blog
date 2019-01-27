@@ -76,7 +76,7 @@
 @media only screen and (max-width: $tablet-breakpoint) {
     .home-container {
         display: block;
-        margin: 0 !important;
+        margin: 0 auto !important;
         width: 100%;
     }
 
@@ -92,6 +92,11 @@
 
     .home-aside-about-content-container  {
         display: none;
+    }
+
+    .home-main-content-container {
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
 }
 
@@ -114,5 +119,9 @@
     .home-aside-about-content-container  {
         margin: 0 !important;
         border-radius: 0 !important;
+    }
+
+    .home-container {
+        margin: 0 !important;
     }
 }

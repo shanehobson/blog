@@ -43,7 +43,8 @@
 }
 
 .navBar-links-container {
-    width: 200px;
+    width: 290px;
+    padding-right: 5px;
 }
 
 .navBar-logo-picture {
@@ -65,7 +66,7 @@
 }
 
 .show-hamburger {
-    height: 140px;
+    height: 180px;
     background-color: $navbarBackground;
     visibility: show;
     -webkit-transition: height .6s ease-in-out; /* Safari */
