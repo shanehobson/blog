@@ -9,6 +9,14 @@ const api = require('./server/routes/api');
 
 const app = express();
 
+/* 401 response if login info is incorrect */
+app.use(function (err, req, res, next) {
+  if (err.name === 'UnauthorizedError') {
+    res.status(401);
+    res.json({"message" : err.name + ": " + err.message});
+  }
+});
+
 // Parsers for POST data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

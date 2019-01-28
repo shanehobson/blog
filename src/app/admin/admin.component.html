@@ -1,0 +1,46 @@
+<!-- Login -->
+<!-- && !authService.isLoggedIn" -->
+<div *ngIf="!isLoading" class="container">
+  <section class="login-page-container" *ngIf="!userLoggedIn">
+    <div class="login-form-container">
+      <form [formGroup]="loginForm">
+        <h3>Login</h3>
+        <div class="input-field">
+          <label class="input-label">Username</label>
+          <input 
+            class="input-control"
+            type="text"
+            formControlName="username"
+            required
+            >
+        </div>
+        <div class="input-field">
+          <label class="input-label">Password</label>
+          <input 
+            class="input-control"
+            type="password"
+            formControlName="password"
+            (keydown.enter)="handleLoginSubmit(loginForm)"
+            required
+            >
+        </div>
+        <div class="d-flex j-center align-center">
+          <button
+            type="button"
+            class="login-button"
+            [disabled]="!loginForm.valid && !loginForm.dirty"
+            (mouseup)="handleLoginSubmit(loginForm)"
+            >
+            Log In
+          </button>
+        </div>
+      </form>
+    </div>
+    <div *ngIf="!userLoggedIn && failedAttempt" class="incorrect-login-container">
+      Incorrect username and password combination. Please try again.
+    </div>
+  </section>
+</div>
+<div *ngIf="isLoading" class="d-flex j-center align-center" style="margin-top: 200px;">
+  <app-spinner [color]="'red'"></app-spinner>
+</div>

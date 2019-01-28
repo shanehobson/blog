@@ -1,47 +1,5 @@
-<!-- Login -->
-<div class="container">
-  <section class="login-page-container" *ngIf="!userLoggedIn">
-    <div class="login-form-container">
-      <form [formGroup]="loginForm">
-        <h3>Login</h3>
-        <div class="input-field">
-          <label class="input-label">Username</label>
-          <input 
-            class="input-control"
-            type="text"
-            formControlName="username"
-            required
-            >
-        </div>
-        <div class="input-field">
-          <label class="input-label">Password</label>
-          <input 
-            class="input-control"
-            type="password"
-            formControlName="password"
-            (keydown.enter)="handleLoginSubmit(loginForm)"
-            required
-            >
-        </div>
-        <div class="d-flex j-center align-center">
-          <button
-            type="button"
-            class="login-button"
-            [disabled]="!loginForm.valid && !loginForm.dirty"
-            (mouseup)="handleLoginSubmit(loginForm)"
-            >
-            Log In
-          </button>
-        </div>
-      </form>
-    </div>
-    <div *ngIf="!userLoggedIn && failedAttempt" class="incorrect-login-container">
-      Incorrect username and password combination. Please try again.
-    </div>
-  </section>
-
   <!-- Create blog post -->
-  <section *ngIf="userLoggedIn" class="create-post-container">
+  <section class="create-post-container">
     <div class="create-post-section">
       <form [formGroup]="createPostForm">
         <h2>Create Blog Post</h2>
@@ -149,6 +107,7 @@
         [blog]="blog"
         [editPostMode]="true"
         (emitEditItem)="openEditItem($event)"
+        (emitRemoveItem)="removeItem($event)"
         (emitEditTitle)="openEditTitle()"
         (emitEditDate)="editDate()"
         (emitEditAuthor)="editAuthor()"
@@ -157,4 +116,3 @@
       </app-template1>
     </div>
   </section>
-</div>

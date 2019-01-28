@@ -3,6 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const Post = require('../models/Post.js');
 const All = require('../models/All.js');
+const User = require('../models/User.js');
 const bodyParser = require('body-parser');
 const path = require('path');
 const fs = require("fs");
@@ -17,6 +18,21 @@ const uuidv1 = require('uuid/v1');
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 const emailer = require('./emailer');
+const profile = require('../controllers/profile');
+const login = require('../controllers/login');
+const authentication = require('../controllers/authentication');
+const passport = require('passport');
+require('../config');
+
+/* JWT Config */
+const jwt = require('express-jwt');
+const auth = jwt({
+  secret: process.env.HASH_SECRET,
+  userProperty: 'payload'
+});
+
+/* Passport init */
+app.use(passport.initialize());
 
 /* Body Parser */
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -165,5 +181,14 @@ router.post('/addToMailingList', (req, res) => {
   console.log(req.body);
   emailer.sendEmail(req, res);
 });
+
+/* Handle user login */
+router.post('/login', login.login); //auth 2nd var
+
+/* Register new user */
+router.post('/register', authentication.register);
+
+/* GET Profile page for logged in user */
+router.get('/profile', auth, profile.profileRead);
 
 module.exports = router;

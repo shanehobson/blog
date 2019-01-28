@@ -12,15 +12,8 @@ export class CreateComponent implements OnInit, OnDestroy {
 
   isLoading = false;
 
-  //Login
-  loginForm: FormGroup;
-  createPostForm: FormGroup;
-  userLoggedIn = true; // CHANGE BACK TO FALSE BEFORE PROD
-  failedAttempt = false;
-  username = '';
-  password = '';
-
   // Create
+  createPostForm: FormGroup;
   hasPicture = false;
   showPicture = false;
   date;
@@ -53,11 +46,7 @@ export class CreateComponent implements OnInit, OnDestroy {
     private router: Router,
     private route: ActivatedRoute
   ) {
-    this.loginForm = this.fb.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
-    });
-    this.createPostForm = this.fb.group({
+      this.createPostForm = this.fb.group({
       title: ['', Validators.required],
       hasPicture: ['No'],
       imageUrl: ['']
@@ -65,10 +54,6 @@ export class CreateComponent implements OnInit, OnDestroy {
    }
 
   ngOnInit() {
-    this.username = window.sessionStorage.getItem('username');
-    this.loginForm.controls['username'].setValue(this.username);
-    this.password = window.sessionStorage.getItem('password');
-    this.loginForm.controls['password'].setValue(this.password);
     this.route.queryParams.subscribe((params) => {
       if (params['id'] && !this.blog['_id']) {
         console.log('entered get blog post front end')
@@ -158,21 +143,6 @@ export class CreateComponent implements OnInit, OnDestroy {
     this.editAuthorMode = false;
     this.saveDataToSessionStorage();
   }
-
-  handleLoginSubmit(form) {
-    this.username = form.controls['username'].value;
-    this.password = form.controls['password'].value;
-    if (this.username === 'cameron' && this.password === 'BigFish720') {
-      this.userLoggedIn = true;
-      this.failedAttempt = false;
-      window.sessionStorage.setItem('username', this.username);
-      window.sessionStorage.setItem('password', this.password);
-    } else {
-      this.userLoggedIn = false;
-      this.failedAttempt = true;
-    }
-  }
-
   addTitle(form) {
     const title = form.controls['title'].value;
     this.blog.title = title;
