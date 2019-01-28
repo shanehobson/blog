@@ -31,17 +31,6 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  // login(username, password) {
-  //   const url = this.loginUrl;   
-  //   return new Promise((resolve, reject) => {
-  //       this.http.post(url, { username, password })
-  //           .subscribe(data => {
-  //               resolve(data);
-  //               reject('save blog post failed');
-  //           });
-  //   });
-  // }
-
   private saveToken(token: string): void {
     localStorage.setItem('mean-token', token);
     this.token = token;

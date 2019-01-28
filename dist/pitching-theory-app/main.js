@@ -615,23 +615,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_colorService__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./services/colorService */ "./src/app/services/colorService.ts");
 /* harmony import */ var _services_blogService__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./services/blogService */ "./src/app/services/blogService.ts");
 /* harmony import */ var _services_form_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./services/form.service */ "./src/app/services/form.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _blog_templates_template1_template1_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./blog-templates/template1/template1.component */ "./src/app/blog-templates/template1/template1.component.ts");
-/* harmony import */ var _aside_aside_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./aside/aside.component */ "./src/app/aside/aside.component.ts");
-/* harmony import */ var _blog_templates_template2_template2_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./blog-templates/template2/template2.component */ "./src/app/blog-templates/template2/template2.component.ts");
-/* harmony import */ var _create_create_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./create/create.component */ "./src/app/create/create.component.ts");
-/* harmony import */ var _create_subtitle_input_subtitle_input_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./create/subtitle-input/subtitle-input.component */ "./src/app/create/subtitle-input/subtitle-input.component.ts");
-/* harmony import */ var _create_paragraph_input_paragraph_input_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./create/paragraph-input/paragraph-input.component */ "./src/app/create/paragraph-input/paragraph-input.component.ts");
-/* harmony import */ var _create_image_input_image_input_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./create/image-input/image-input.component */ "./src/app/create/image-input/image-input.component.ts");
-/* harmony import */ var _create_video_input_video_input_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./create/video-input/video-input.component */ "./src/app/create/video-input/video-input.component.ts");
-/* harmony import */ var _spinner_spinner_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./spinner/spinner.component */ "./src/app/spinner/spinner.component.ts");
-/* harmony import */ var _create_date_input_date_input_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./create/date-input/date-input.component */ "./src/app/create/date-input/date-input.component.ts");
-/* harmony import */ var _create_author_input_author_input_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./create/author-input/author-input.component */ "./src/app/create/author-input/author-input.component.ts");
-/* harmony import */ var _aside_about_aside_about_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./aside-about/aside-about.component */ "./src/app/aside-about/aside-about.component.ts");
-/* harmony import */ var _aside_mailing_list_aside_mailing_list_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./aside-mailing-list/aside-mailing-list.component */ "./src/app/aside-mailing-list/aside-mailing-list.component.ts");
-/* harmony import */ var _downloads_downloads_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./downloads/downloads.component */ "./src/app/downloads/downloads.component.ts");
-/* harmony import */ var _admin_admin_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./admin/admin.component */ "./src/app/admin/admin.component.ts");
-/* harmony import */ var _profile_profile_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./profile/profile.component */ "./src/app/profile/profile.component.ts");
+/* harmony import */ var _services_can_activate_auth_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./services/can-activate-auth.service */ "./src/app/services/can-activate-auth.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _blog_templates_template1_template1_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./blog-templates/template1/template1.component */ "./src/app/blog-templates/template1/template1.component.ts");
+/* harmony import */ var _aside_aside_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./aside/aside.component */ "./src/app/aside/aside.component.ts");
+/* harmony import */ var _blog_templates_template2_template2_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./blog-templates/template2/template2.component */ "./src/app/blog-templates/template2/template2.component.ts");
+/* harmony import */ var _create_create_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./create/create.component */ "./src/app/create/create.component.ts");
+/* harmony import */ var _create_subtitle_input_subtitle_input_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./create/subtitle-input/subtitle-input.component */ "./src/app/create/subtitle-input/subtitle-input.component.ts");
+/* harmony import */ var _create_paragraph_input_paragraph_input_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./create/paragraph-input/paragraph-input.component */ "./src/app/create/paragraph-input/paragraph-input.component.ts");
+/* harmony import */ var _create_image_input_image_input_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./create/image-input/image-input.component */ "./src/app/create/image-input/image-input.component.ts");
+/* harmony import */ var _create_video_input_video_input_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./create/video-input/video-input.component */ "./src/app/create/video-input/video-input.component.ts");
+/* harmony import */ var _spinner_spinner_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./spinner/spinner.component */ "./src/app/spinner/spinner.component.ts");
+/* harmony import */ var _create_date_input_date_input_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./create/date-input/date-input.component */ "./src/app/create/date-input/date-input.component.ts");
+/* harmony import */ var _create_author_input_author_input_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./create/author-input/author-input.component */ "./src/app/create/author-input/author-input.component.ts");
+/* harmony import */ var _aside_about_aside_about_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./aside-about/aside-about.component */ "./src/app/aside-about/aside-about.component.ts");
+/* harmony import */ var _aside_mailing_list_aside_mailing_list_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./aside-mailing-list/aside-mailing-list.component */ "./src/app/aside-mailing-list/aside-mailing-list.component.ts");
+/* harmony import */ var _downloads_downloads_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./downloads/downloads.component */ "./src/app/downloads/downloads.component.ts");
+/* harmony import */ var _admin_admin_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./admin/admin.component */ "./src/app/admin/admin.component.ts");
+/* harmony import */ var _profile_profile_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./profile/profile.component */ "./src/app/profile/profile.component.ts");
+
 
 
 
@@ -666,11 +668,22 @@ __webpack_require__.r(__webpack_exports__);
 var appRoutes = [
     { path: 'about', component: _about_about_component__WEBPACK_IMPORTED_MODULE_9__["AboutComponent"] },
     { path: 'contact', component: _contact_contact_component__WEBPACK_IMPORTED_MODULE_10__["ContactComponent"] },
-    { path: 'downloads', component: _downloads_downloads_component__WEBPACK_IMPORTED_MODULE_28__["DownloadsComponent"] },
-    { path: 'admin', component: _admin_admin_component__WEBPACK_IMPORTED_MODULE_29__["AdminComponent"] },
-    { path: 'create', component: _create_create_component__WEBPACK_IMPORTED_MODULE_18__["CreateComponent"] },
-    { path: 'profile', component: _profile_profile_component__WEBPACK_IMPORTED_MODULE_30__["ProfileComponent"] },
-    { path: 'edit', component: _home_home_component__WEBPACK_IMPORTED_MODULE_8__["HomeComponent"] },
+    { path: 'downloads', component: _downloads_downloads_component__WEBPACK_IMPORTED_MODULE_29__["DownloadsComponent"] },
+    { path: 'admin', component: _admin_admin_component__WEBPACK_IMPORTED_MODULE_30__["AdminComponent"] },
+    { path: 'profile', component: _profile_profile_component__WEBPACK_IMPORTED_MODULE_31__["ProfileComponent"] },
+    { path: 'create',
+        component: _create_create_component__WEBPACK_IMPORTED_MODULE_19__["CreateComponent"],
+        canActivate: [
+            'CanAlwaysActivateGuard',
+            _services_can_activate_auth_service__WEBPACK_IMPORTED_MODULE_14__["CanActivateViaAuthGuard"]
+        ]
+    },
+    { path: 'edit',
+        component: _home_home_component__WEBPACK_IMPORTED_MODULE_8__["HomeComponent"],
+        canActivate: [
+            'CanAlwaysActivateGuard',
+            _services_can_activate_auth_service__WEBPACK_IMPORTED_MODULE_14__["CanActivateViaAuthGuard"]
+        ] },
     { path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_8__["HomeComponent"] }
 ];
 var AppModule = /** @class */ (function () {
@@ -683,22 +696,22 @@ var AppModule = /** @class */ (function () {
                 _home_home_component__WEBPACK_IMPORTED_MODULE_8__["HomeComponent"],
                 _about_about_component__WEBPACK_IMPORTED_MODULE_9__["AboutComponent"],
                 _contact_contact_component__WEBPACK_IMPORTED_MODULE_10__["ContactComponent"],
-                _blog_templates_template1_template1_component__WEBPACK_IMPORTED_MODULE_15__["Template1Component"],
-                _aside_aside_component__WEBPACK_IMPORTED_MODULE_16__["AsideComponent"],
-                _blog_templates_template2_template2_component__WEBPACK_IMPORTED_MODULE_17__["Template2Component"],
-                _create_create_component__WEBPACK_IMPORTED_MODULE_18__["CreateComponent"],
-                _create_subtitle_input_subtitle_input_component__WEBPACK_IMPORTED_MODULE_19__["SubtitleInputComponent"],
-                _create_paragraph_input_paragraph_input_component__WEBPACK_IMPORTED_MODULE_20__["ParagraphInputComponent"],
-                _create_image_input_image_input_component__WEBPACK_IMPORTED_MODULE_21__["ImageInputComponent"],
-                _create_video_input_video_input_component__WEBPACK_IMPORTED_MODULE_22__["VideoInputComponent"],
-                _spinner_spinner_component__WEBPACK_IMPORTED_MODULE_23__["SpinnerComponent"],
-                _create_date_input_date_input_component__WEBPACK_IMPORTED_MODULE_24__["DateInputComponent"],
-                _create_author_input_author_input_component__WEBPACK_IMPORTED_MODULE_25__["AuthorInputComponent"],
-                _aside_about_aside_about_component__WEBPACK_IMPORTED_MODULE_26__["AsideAboutComponent"],
-                _aside_mailing_list_aside_mailing_list_component__WEBPACK_IMPORTED_MODULE_27__["AsideMailingListComponent"],
-                _downloads_downloads_component__WEBPACK_IMPORTED_MODULE_28__["DownloadsComponent"],
-                _admin_admin_component__WEBPACK_IMPORTED_MODULE_29__["AdminComponent"],
-                _profile_profile_component__WEBPACK_IMPORTED_MODULE_30__["ProfileComponent"]
+                _blog_templates_template1_template1_component__WEBPACK_IMPORTED_MODULE_16__["Template1Component"],
+                _aside_aside_component__WEBPACK_IMPORTED_MODULE_17__["AsideComponent"],
+                _blog_templates_template2_template2_component__WEBPACK_IMPORTED_MODULE_18__["Template2Component"],
+                _create_create_component__WEBPACK_IMPORTED_MODULE_19__["CreateComponent"],
+                _create_subtitle_input_subtitle_input_component__WEBPACK_IMPORTED_MODULE_20__["SubtitleInputComponent"],
+                _create_paragraph_input_paragraph_input_component__WEBPACK_IMPORTED_MODULE_21__["ParagraphInputComponent"],
+                _create_image_input_image_input_component__WEBPACK_IMPORTED_MODULE_22__["ImageInputComponent"],
+                _create_video_input_video_input_component__WEBPACK_IMPORTED_MODULE_23__["VideoInputComponent"],
+                _spinner_spinner_component__WEBPACK_IMPORTED_MODULE_24__["SpinnerComponent"],
+                _create_date_input_date_input_component__WEBPACK_IMPORTED_MODULE_25__["DateInputComponent"],
+                _create_author_input_author_input_component__WEBPACK_IMPORTED_MODULE_26__["AuthorInputComponent"],
+                _aside_about_aside_about_component__WEBPACK_IMPORTED_MODULE_27__["AsideAboutComponent"],
+                _aside_mailing_list_aside_mailing_list_component__WEBPACK_IMPORTED_MODULE_28__["AsideMailingListComponent"],
+                _downloads_downloads_component__WEBPACK_IMPORTED_MODULE_29__["DownloadsComponent"],
+                _admin_admin_component__WEBPACK_IMPORTED_MODULE_30__["AdminComponent"],
+                _profile_profile_component__WEBPACK_IMPORTED_MODULE_31__["ProfileComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -707,10 +720,10 @@ var AppModule = /** @class */ (function () {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ReactiveFormsModule"],
                 [_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"]],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_14__["RouterModule"].forRoot(appRoutes, { enableTracing: true } // <-- debugging purposes only
+                _angular_router__WEBPACK_IMPORTED_MODULE_15__["RouterModule"].forRoot(appRoutes, { enableTracing: true } // <-- debugging purposes only
                 )
             ],
-            providers: [_services_colorService__WEBPACK_IMPORTED_MODULE_11__["ColorService"], _services_blogService__WEBPACK_IMPORTED_MODULE_12__["BlogService"], _services_form_service__WEBPACK_IMPORTED_MODULE_13__["FormService"]],
+            providers: [_services_colorService__WEBPACK_IMPORTED_MODULE_11__["ColorService"], _services_blogService__WEBPACK_IMPORTED_MODULE_12__["BlogService"], _services_form_service__WEBPACK_IMPORTED_MODULE_13__["FormService"], _services_can_activate_auth_service__WEBPACK_IMPORTED_MODULE_14__["CanActivateViaAuthGuard"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
         })
     ], AppModule);
@@ -2523,16 +2536,6 @@ var AuthService = /** @class */ (function () {
         this.router = router;
         this.loginUrl = '/api/login';
     }
-    // login(username, password) {
-    //   const url = this.loginUrl;   
-    //   return new Promise((resolve, reject) => {
-    //       this.http.post(url, { username, password })
-    //           .subscribe(data => {
-    //               resolve(data);
-    //               reject('save blog post failed');
-    //           });
-    //   });
-    // }
     AuthService.prototype.saveToken = function (token) {
         localStorage.setItem('mean-token', token);
         this.token = token;
@@ -2723,6 +2726,40 @@ var BlogService = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
     ], BlogService);
     return BlogService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/can-activate-auth.service.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/services/can-activate-auth.service.ts ***!
+  \*******************************************************/
+/*! exports provided: CanActivateViaAuthGuard */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CanActivateViaAuthGuard", function() { return CanActivateViaAuthGuard; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./auth.service */ "./src/app/services/auth.service.ts");
+
+
+
+var CanActivateViaAuthGuard = /** @class */ (function () {
+    function CanActivateViaAuthGuard(authService) {
+        this.authService = authService;
+    }
+    CanActivateViaAuthGuard.prototype.canActivate = function () {
+        return this.authService.isLoggedIn();
+    };
+    CanActivateViaAuthGuard = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"]])
+    ], CanActivateViaAuthGuard);
+    return CanActivateViaAuthGuard;
 }());
 
 

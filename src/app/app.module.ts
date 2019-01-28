@@ -11,6 +11,7 @@ import { ContactComponent } from './contact/contact.component';
 import {ColorService} from './services/colorService';
 import {BlogService} from './services/blogService';
 import {FormService} from './services/form.service';
+import {CanActivateViaAuthGuard} from './services/can-activate-auth.service';
 import { RouterModule, Routes } from '@angular/router';
 import { Template1Component } from './blog-templates/template1/template1.component';
 import { AsideComponent } from './aside/aside.component';
@@ -33,10 +34,21 @@ const appRoutes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'downloads', component: DownloadsComponent },
-  { path: 'admin', component: AdminComponent },
-  { path: 'create', component: CreateComponent },
+  { path: 'admin',component: AdminComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'edit', component: HomeComponent },
+  { path: 'create',
+    component: CreateComponent,
+    canActivate: [
+      'CanAlwaysActivateGuard',
+      CanActivateViaAuthGuard
+    ]
+  },
+  { path: 'edit',
+  component: HomeComponent,
+  canActivate: [
+  'CanAlwaysActivateGuard',
+  CanActivateViaAuthGuard
+] },
   { path: '', component: HomeComponent }
 ]
 
@@ -75,7 +87,7 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [  ColorService, BlogService, FormService ],
+  providers: [  ColorService, BlogService, FormService, CanActivateViaAuthGuard ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
