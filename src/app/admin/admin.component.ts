@@ -41,6 +41,7 @@ export class AdminComponent implements OnInit {
 
   handleLoginSubmit(form) {
     this.isLoading = true;
+    this.failedAttempt = false;
     this.username = form.controls['username'].value;
     this.password = form.controls['password'].value;
     this.authService.login({username: this.username, password: this.password})
@@ -48,9 +49,14 @@ export class AdminComponent implements OnInit {
       this.router.navigateByUrl('/profile');
     }, (err) => {
       console.error(err);
+      setTimeout(() => {
+        this.isLoading = false;
+        this.failedAttempt = true;
+      }, 400);
     });
   }
 
+  // only for dev use to manually set up new users in future
   register() {
     this.authService.register(({ username: this.username, password: this.password })).subscribe(() => {
       this.router.navigateByUrl('/profile');

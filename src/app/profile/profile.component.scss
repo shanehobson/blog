@@ -1,0 +1,10 @@
+@import '../../sass/colors.scss';
+@import '../../sass/layouts.scss';
+@import '../../sass/breakpoints.scss';
+@import '../../sass/buttons.scss';
+
+@media only screen and (max-width: $mobile-breakpoint) {
+    .profile-buttons-container {
+        padding-top: 40px;
+    }
+}
