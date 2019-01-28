@@ -34,21 +34,19 @@ const appRoutes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'downloads', component: DownloadsComponent },
-  { path: 'admin',component: AdminComponent },
+  { path: 'admin',
+    component: AdminComponent,
+    canActivate: [CanActivateViaAuthGuard]
+  },
   { path: 'profile', component: ProfileComponent },
   { path: 'create',
     component: CreateComponent,
-    canActivate: [
-      'CanAlwaysActivateGuard',
-      CanActivateViaAuthGuard
-    ]
+    canActivate: [CanActivateViaAuthGuard]
   },
   { path: 'edit',
-  component: HomeComponent,
-  canActivate: [
-  'CanAlwaysActivateGuard',
-  CanActivateViaAuthGuard
-] },
+    component: HomeComponent,
+    canActivate: [CanActivateViaAuthGuard]
+  },
   { path: '', component: HomeComponent }
 ]
 

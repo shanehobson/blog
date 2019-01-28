@@ -675,21 +675,19 @@ var appRoutes = [
     { path: 'about', component: _about_about_component__WEBPACK_IMPORTED_MODULE_9__["AboutComponent"] },
     { path: 'contact', component: _contact_contact_component__WEBPACK_IMPORTED_MODULE_10__["ContactComponent"] },
     { path: 'downloads', component: _downloads_downloads_component__WEBPACK_IMPORTED_MODULE_29__["DownloadsComponent"] },
-    { path: 'admin', component: _admin_admin_component__WEBPACK_IMPORTED_MODULE_30__["AdminComponent"] },
+    { path: 'admin',
+        component: _admin_admin_component__WEBPACK_IMPORTED_MODULE_30__["AdminComponent"],
+        canActivate: [_services_can_activate_auth_service__WEBPACK_IMPORTED_MODULE_14__["CanActivateViaAuthGuard"]]
+    },
     { path: 'profile', component: _profile_profile_component__WEBPACK_IMPORTED_MODULE_31__["ProfileComponent"] },
     { path: 'create',
         component: _create_create_component__WEBPACK_IMPORTED_MODULE_19__["CreateComponent"],
-        canActivate: [
-            'CanAlwaysActivateGuard',
-            _services_can_activate_auth_service__WEBPACK_IMPORTED_MODULE_14__["CanActivateViaAuthGuard"]
-        ]
+        canActivate: [_services_can_activate_auth_service__WEBPACK_IMPORTED_MODULE_14__["CanActivateViaAuthGuard"]]
     },
     { path: 'edit',
         component: _home_home_component__WEBPACK_IMPORTED_MODULE_8__["HomeComponent"],
-        canActivate: [
-            'CanAlwaysActivateGuard',
-            _services_can_activate_auth_service__WEBPACK_IMPORTED_MODULE_14__["CanActivateViaAuthGuard"]
-        ] },
+        canActivate: [_services_can_activate_auth_service__WEBPACK_IMPORTED_MODULE_14__["CanActivateViaAuthGuard"]]
+    },
     { path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_8__["HomeComponent"] }
 ];
 var AppModule = /** @class */ (function () {
@@ -2467,7 +2465,7 @@ var HomeComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"height: 37vh; width: 100%;\" class=\"d-flex j-center align-center;\">\n  <div style=\"width: 600px;\" class=\"profile-buttons-container d-flex non-mobile-j-space-between mobile-j-start mobile-flex-column\" style=\"align-items: center !important\">\n    <div style=\"padding: 15px\">\n        <button class=\"rect-btn rect-btn_green\">Create New Post</button>\n    </div>\n    <div style=\"padding: 15px\">\n        <button class=\"rect-btn rect-btn_blue\">Edit Posts</button>\n    </div>\n  </div>\n</div>"
+module.exports = "<div style=\"height: 37vh; width: 100%;\" class=\"d-flex j-center align-center;\">\n  <div style=\"width: 600px;\" class=\"profile-buttons-container d-flex non-mobile-j-space-between mobile-j-start mobile-flex-column\" style=\"align-items: center !important\">\n    <div style=\"padding: 15px\">\n        <button class=\"rect-btn rect-btn_green\" (mouseup)=\"navigateToCreate()\">Create New Post</button>\n    </div>\n    <div style=\"padding: 15px\">\n        <button class=\"rect-btn rect-btn_blue\" (mouseup)=\"navigateToEdit()\">Edit Posts</button>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -2494,12 +2492,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfileComponent", function() { return ProfileComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
 
 
 var ProfileComponent = /** @class */ (function () {
-    function ProfileComponent() {
+    function ProfileComponent(router) {
+        this.router = router;
     }
     ProfileComponent.prototype.ngOnInit = function () {
+    };
+    ProfileComponent.prototype.navigateToCreate = function () {
+        this.router.navigate(['/', 'create']);
+    };
+    ProfileComponent.prototype.navigateToEdit = function () {
+        this.router.navigate(['/', 'edit']);
     };
     ProfileComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -2507,7 +2514,7 @@ var ProfileComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./profile.component.html */ "./src/app/profile/profile.component.html"),
             styles: [__webpack_require__(/*! ./profile.component.scss */ "./src/app/profile/profile.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], ProfileComponent);
     return ProfileComponent;
 }());
