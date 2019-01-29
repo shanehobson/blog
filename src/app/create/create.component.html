@@ -1,118 +1,120 @@
   <!-- Create blog post -->
-  <section class="create-post-container">
-    <div class="create-post-section">
-      <form [formGroup]="createPostForm">
-        <h2>Create Blog Post</h2>
-        <div class="input-field" style="margin-left: auto; margin-right: auto; max-width: 450px;">
-            <label *ngIf="editTitleMode" class="create-input-label">Title</label>
-            <div *ngIf="editTitleMode" class="d-flex j-center align-start" style="margin-left: auto; margin-right: auto;">
-                <input 
-                class="create-input-control"
-                style="border: 1px solid #808080; border-radius: 4px;"
-                type="text"
-                formControlName="title"
-                (keydown.enter)="addTitle(createPostForm)"
-                required
+  <div class="container">
+    <section class="create-post-container">
+      <div class="create-post-section">
+        <form [formGroup]="createPostForm">
+          <h2>Create Blog Post</h2>
+          <div class="input-field" style="margin-left: auto; margin-right: auto; max-width: 450px;">
+              <label *ngIf="editTitleMode" class="create-input-label">Title</label>
+              <div *ngIf="editTitleMode" class="d-flex j-center align-start" style="margin-left: auto; margin-right: auto;">
+                  <input 
+                  class="create-input-control"
+                  style="border: 1px solid #808080; border-radius: 4px;"
+                  type="text"
+                  formControlName="title"
+                  (keydown.enter)="addTitle(createPostForm)"
+                  required
+                  >
+                  <div style="padding: 0 5px 5px 5px;" class="d-flex j-start align-center;">
+                    <button
+                    style="margin-top: 2px;"
+                      type="button"
+                      class="rect-btn rect-btn_small rect-btn_red"
+                      (mouseup)="addTitle(createPostForm)"
+                      [disabled]="!createPostForm.valid || !createPostForm.dirty"
+                      >
+                      Add <i class="fa fa-arrow-right"></i>
+                    </button>
+                  </div>
+              </div>
+            </div>
+            <div *ngIf="editAuthorMode" class="d-flex j-center" style="margin-bottom: 15px;">
+                <app-author-input (emitAuthor)="addAuthor($event)" (emitRemoveAuthor)="removeAuthor()"></app-author-input>
+              </div>
+            <div *ngIf="editDateMode" class="d-flex j-center" style="margin-bottom: 15px;">
+              <app-date-input (emitDate)="addDate($event)" (emitRemoveDate)="removeDate()"></app-date-input>
+            </div>
+            <div class="input-field d-flex j-center align-center" *ngIf="noTitlePicture">
+                <label class="create-input-label" style="margin-left: 0; margin-right: 0; padding-right: 5px;">Add Title Picture?</label>
+                <select formControlName="hasPicture" (change)="onPictureSelectChange(createPostForm)">
+                  <option>Yes</option>
+                  <option>No</option>
+                </select>
+            </div>
+            <div *ngIf="showPicture" class="d-flex j-center">
+                <app-image-input
+                (emitImage)="onEmitTitleImage($event)"
+                (emitRemoveImage)="onEmitRemoveTitleImage($event)"
+                [itemIndex]="100"
                 >
-                <div style="padding: 0 5px 5px 5px;" class="d-flex j-start align-center;">
-                  <button
-                  style="margin-top: 2px;"
-                    type="button"
-                    class="rect-btn rect-btn_small rect-btn_red"
-                    (mouseup)="addTitle(createPostForm)"
-                    [disabled]="!createPostForm.valid || !createPostForm.dirty"
-                    >
-                    Add <i class="fa fa-arrow-right"></i>
-                  </button>
-                </div>
+              </app-image-input>
             </div>
+        </form>
+        <div class="d-flex j-center align-center">
+          <div style="padding: 5px;">
+              <button class="rect-btn rect-btn_small rect-btn_red" (mouseup)="addInputField('subtitle', '', this.blog.elements.length);" [disabled]="inputField.length > 0 && inputField[0].type !== 'subtitle'"
+            >Subtitle <i class="fa fa-plus"></i></button>
           </div>
-          <div *ngIf="editAuthorMode" class="d-flex j-center" style="margin-bottom: 15px;">
-              <app-author-input (emitAuthor)="addAuthor($event)" (emitRemoveAuthor)="removeAuthor()"></app-author-input>
-            </div>
-          <div *ngIf="editDateMode" class="d-flex j-center" style="margin-bottom: 15px;">
-            <app-date-input (emitDate)="addDate($event)" (emitRemoveDate)="removeDate()"></app-date-input>
+          <div style="padding: 5px;">
+              <button class="rect-btn rect-btn_small rect-btn_blue" (mouseup)="addInputField('paragraph', '', this.blog.elements.length);" [disabled]="inputField.length > 0 && inputField[0].type !== 'paragraph'">Paragraph <i class="fa fa-plus"></i></button>
           </div>
-          <div class="input-field d-flex j-center align-center" *ngIf="noTitlePicture">
-              <label class="create-input-label" style="margin-left: 0; margin-right: 0; padding-right: 5px;">Add Title Picture?</label>
-              <select formControlName="hasPicture" (change)="onPictureSelectChange(createPostForm)">
-                <option>Yes</option>
-                <option>No</option>
-              </select>
+          <div style="padding: 5px;">
+              <button class="rect-btn rect-btn_small rect-btn_green" (mouseup)="addInputField('image', '', this.blog.elements.length);" [disabled]="inputField.length > 0 && inputField[0].type !== 'image'">Picture <i class="fa fa-plus"></i></button>
           </div>
-          <div *ngIf="showPicture" class="d-flex j-center">
-              <app-image-input
-              (emitImage)="onEmitTitleImage($event)"
-              (emitRemoveImage)="onEmitRemoveTitleImage($event)"
-              [itemIndex]="100"
+          <div style="padding: 5px;">
+              <button class="rect-btn rect-btn_small rect-btn_gold" (mouseup)="addInputField('video', '', this.blog.elements.length);" [disabled]="inputField.length > 0">Video <i class="fa fa-plus"></i></button>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="create-input-fields-container">
+          <div *ngFor="let field of inputField;" style="padding: 8px 14px;">
+            <app-subtitle-input
+              *ngIf="field.type === 'subtitle'"
+              (emitSubtitle)="onEmitSubtitle($event)"
+              (emitRemoveSubtitle)="onEmitRemoveSubtitle($event)"
+              [itemIndex]="i"
+              [content]="field.content"
+              >
+            </app-subtitle-input>
+            <app-paragraph-input
+              *ngIf="field.type === 'paragraph'"
+              (emitParagraph)="onEmitParagraph($event)"
+              (emitRemoveParagraph)="onEmitRemoveParagraph($event)"
+              [itemIndex]="i"
+              [content]="field.content"
+              >
+            </app-paragraph-input>
+            <app-image-input
+              *ngIf="field.type === 'image'"
+              (emitImage)="onEmitImage($event)"
+              (emitRemoveImage)="onEmitRemoveImage($event)"
+              [itemIndex]="i"
+              [content]="field.content"
               >
             </app-image-input>
+            <app-video-input
+            *ngIf="field.type === 'video'"
+            (emitVideo)="onEmitVideo($event)"
+            (emitRemoveVideo)="onEmitRemoveVideo($event)"
+            [itemIndex]="i"
+            [content]="field.content"
+            >
+          </app-video-input>
           </div>
-      </form>
-      <div class="d-flex j-center align-center">
-        <div style="padding: 5px;">
-            <button class="rect-btn rect-btn_small rect-btn_red" (mouseup)="addInputField('subtitle', '', this.blog.elements.length);" [disabled]="inputField.length > 0 && inputField[0].type !== 'subtitle'"
-          >Subtitle <i class="fa fa-plus"></i></button>
-        </div>
-        <div style="padding: 5px;">
-            <button class="rect-btn rect-btn_small rect-btn_blue" (mouseup)="addInputField('paragraph', '', this.blog.elements.length);" [disabled]="inputField.length > 0 && inputField[0].type !== 'paragraph'">Paragraph <i class="fa fa-plus"></i></button>
-        </div>
-        <div style="padding: 5px;">
-            <button class="rect-btn rect-btn_small rect-btn_green" (mouseup)="addInputField('image', '', this.blog.elements.length);" [disabled]="inputField.length > 0 && inputField[0].type !== 'image'">Picture <i class="fa fa-plus"></i></button>
-        </div>
-        <div style="padding: 5px;">
-            <button class="rect-btn rect-btn_small rect-btn_gold" (mouseup)="addInputField('video', '', this.blog.elements.length);" [disabled]="inputField.length > 0">Video <i class="fa fa-plus"></i></button>
         </div>
       </div>
-      <div class="divider"></div>
-      <div class="create-input-fields-container">
-        <div *ngFor="let field of inputField;" style="padding: 8px 14px;">
-          <app-subtitle-input
-            *ngIf="field.type === 'subtitle'"
-            (emitSubtitle)="onEmitSubtitle($event)"
-            (emitRemoveSubtitle)="onEmitRemoveSubtitle($event)"
-            [itemIndex]="i"
-            [content]="field.content"
-            >
-          </app-subtitle-input>
-          <app-paragraph-input
-            *ngIf="field.type === 'paragraph'"
-            (emitParagraph)="onEmitParagraph($event)"
-            (emitRemoveParagraph)="onEmitRemoveParagraph($event)"
-            [itemIndex]="i"
-            [content]="field.content"
-            >
-          </app-paragraph-input>
-          <app-image-input
-            *ngIf="field.type === 'image'"
-            (emitImage)="onEmitImage($event)"
-            (emitRemoveImage)="onEmitRemoveImage($event)"
-            [itemIndex]="i"
-            [content]="field.content"
-            >
-          </app-image-input>
-          <app-video-input
-          *ngIf="field.type === 'video'"
-          (emitVideo)="onEmitVideo($event)"
-          (emitRemoveVideo)="onEmitRemoveVideo($event)"
-          [itemIndex]="i"
-          [content]="field.content"
-          >
-        </app-video-input>
-        </div>
+      <div>
+        <app-template1 
+          [blog]="blog"
+          [editPostMode]="true"
+          (emitEditItem)="openEditItem($event)"
+          (emitRemoveItem)="removeItem($event)"
+          (emitEditTitle)="openEditTitle()"
+          (emitEditDate)="editDate()"
+          (emitEditAuthor)="editAuthor()"
+          (emitRemoveAuthor)="removeAuthor()"
+          (submitBlogPost)="blogPostSubmitted()">
+        </app-template1>
       </div>
-    </div>
-    <div>
-      <app-template1 
-        [blog]="blog"
-        [editPostMode]="true"
-        (emitEditItem)="openEditItem($event)"
-        (emitRemoveItem)="removeItem($event)"
-        (emitEditTitle)="openEditTitle()"
-        (emitEditDate)="editDate()"
-        (emitEditAuthor)="editAuthor()"
-        (emitRemoveAuthor)="removeAuthor()"
-        (submitBlogPost)="blogPostSubmitted()">
-      </app-template1>
-    </div>
-  </section>
+    </section>
+</div>
