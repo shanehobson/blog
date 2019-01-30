@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {ColorService} from './services/colorService'
-import {BlogService} from './services/blogService'
+import {ColorService} from './services/colorService';
+import {BlogService} from './services/blogService';
+import { AuthService } from './services/auth.service';
 
 import {MatToolbarModule} from '@angular/material/toolbar'
 
@@ -19,7 +20,8 @@ export class AppComponent implements OnInit {
   constructor(
     private router: Router,
     private colorService: ColorService,
-    private blogService: BlogService
+    private blogService: BlogService,
+    private authService: AuthService
   ) {
 
   }
@@ -56,5 +58,10 @@ export class AppComponent implements OnInit {
   handleDownloadsClicked() {
     this.showHamburgerMenuContent = false;
     this.router.navigate(['/', 'downloads']);
+  }
+
+  handleProfileClicked() {
+    this.showHamburgerMenuContent = false;
+    this.router.navigate(['/', 'profile']);
   }
 }

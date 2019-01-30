@@ -3,9 +3,7 @@ import { Router, RouterModule } from '@angular/router';
 
 @Injectable()
 export class ColorService {
- constructor(private router: Router){
-  
-  }
+ constructor(private router: Router){}
 
    getActivatedRoute(path){
      if (this.router.url === path) {

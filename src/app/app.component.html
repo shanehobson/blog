@@ -4,11 +4,12 @@
           <div style="padding-top: 9px;">
             <img src="../assets/images/logo-reduced.png" alt="" class="navBar-logo-picture">
           </div>
-          <div class="d-flex j-space-between align-center navBar-links-container">
+          <div class="d-flex j-space-between align-center" [ngClass]="authService.isLoggedIn() ? 'navBar-links-container-extended' : 'navBar-links-container'">
             <div style="margin: auto 0"><a (mouseup)="handleHomeClicked()" [ngClass]="this.colorService.getActivatedRoute('/')">Home</a></div>
             <div style="margin: auto 0"><a (mouseup)="handleAboutClicked()" [ngClass]="this.colorService.getActivatedRoute('/about')">About</a></div>
             <div style="margin: auto 0"><a (mouseup)="handleContactClicked()" [ngClass]="this.colorService.getActivatedRoute('/contact')">Contact</a></div>
             <div style="margin: auto 0"><a (mouseup)="handleDownloadsClicked()" [ngClass]="this.colorService.getActivatedRoute('/downloads')">Downloads</a></div>
+            <div *ngIf="authService.isLoggedIn()" style="margin: auto 0"><a (mouseup)="handleProfileClicked()" [ngClass]="this.colorService.getActivatedRoute('/profile')">Admin</a></div>
           </div>
           <div class="hamburger-menu" (mouseup)="toggleHamburgerMenu()">
             <div></div>
@@ -23,14 +24,15 @@
             <div><a (mouseup)="handleAboutClicked()" [ngClass]="this.colorService.getActivatedRoute('/about')">About</a></div>
             <div><a (mouseup)="handleContactClicked()"  [ngClass]="this.colorService.getActivatedRoute('/contact')">Contact</a></div>
             <div><a (mouseup)="handleDownloadsClicked()" [ngClass]="this.colorService.getActivatedRoute('/downloads')">Downloads</a></div>
+            <div><a (mouseup)="handleProfileClicked()" [ngClass]="this.colorService.getActivatedRoute('/profile')">Admin</a></div>
         </div>
       </div>
-      <div *ngIf="!isLoading">
-        <router-outlet  (activate)="onActivate($event)"></router-outlet>
-      </div>
-      <div *ngIf="isLoading" class="d-flex j-center align-center" style="margin: 200px auto 0 auto">
-        <app-spinner [color]="'red'"></app-spinner>
-      </div>
+    <div *ngIf="!isLoading">
+      <router-outlet  (activate)="onActivate($event)"></router-outlet>
+    </div>
+    <div *ngIf="isLoading" class="d-flex j-center align-center" style="margin: 200px auto 0 auto">
+      <app-spinner [color]="'red'"></app-spinner>
+    </div>
 </div>
 <div *ngIf="!isLoading" class="footer">
     &copy; 2019 PitchingTheory.com
