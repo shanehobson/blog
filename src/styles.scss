@@ -93,7 +93,42 @@ a:focus {
     }
 }
 
-// Input Styles
+// Create Blog Input Styles
+.blog-input-border {
+    margin: 0 auto 25px auto;
+    padding: 30px;
+    position: relative;
+    border: 2px solid;
+    border-radius: 8px;
+    border-color: lighten($buttonGreen, 10);
+    width: 394px;
+
+    &._red {
+        border: 2px solid;
+        border-radius: 4px;
+        border-color: darken($richRed, 10);
+    }
+
+    &._blue {
+        border: 2px solid;
+        border-radius: 4px;
+        border-color: darken($warrantyBlue, 10);
+    }
+
+    &._green {
+        border: 2px solid;
+        border-radius: 4px;
+        border-color: darken($buttonGreen, 10);
+    }
+
+    &._yellow {
+        border: 2px solid;
+        border-radius: 4px;
+        border-color: darken($gold, 5);
+    }
+}
+
+// General Input Styles
 .input-field {
     margin: 0 auto 5px auto;
     padding: 10px;
