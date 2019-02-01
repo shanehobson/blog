@@ -32,6 +32,7 @@ export class AdminComponent implements OnInit {
    }
 
   ngOnInit() {
+    // Redirect to /profile when user is logged in
     if (this.authService.isLoggedIn()) {
       this.router.navigate(['/', 'profile']);
     } else {
