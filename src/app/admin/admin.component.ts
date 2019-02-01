@@ -14,7 +14,7 @@ export class AdminComponent implements OnInit {
 
   //Login
   loginForm: FormGroup;
-  userLoggedIn = false; // CHANGE BACK TO FALSE BEFORE PROD
+  userLoggedIn = false; // CHANGE TO FALSE BEFORE PROD
   failedAttempt = false;
   username = '';
   password = '';

@@ -35,10 +35,12 @@ const appRoutes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'downloads', component: DownloadsComponent },
   { path: 'admin',
-    component: AdminComponent,
-    canActivate: [CanActivateViaAuthGuard]
+    component: AdminComponent
   },
-  { path: 'profile', component: ProfileComponent },
+  { path: 'profile',
+    component: ProfileComponent,
+    canActivate: [CanActivateViaAuthGuard]
+},
   { path: 'create',
     component: CreateComponent,
     canActivate: [CanActivateViaAuthGuard]
