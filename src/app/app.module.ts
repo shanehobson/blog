@@ -37,6 +37,7 @@ const appRoutes: Routes = [
   { path: 'admin',
     component: AdminComponent
   },
+  // Protected Routes
   { path: 'profile',
     component: ProfileComponent,
     canActivate: [CanActivateViaAuthGuard]
@@ -49,6 +50,7 @@ const appRoutes: Routes = [
     component: HomeComponent,
     canActivate: [CanActivateViaAuthGuard]
   },
+  // Home Component
   { path: '', component: HomeComponent }
 ]
 

@@ -409,7 +409,7 @@ var AdminComponent = /** @class */ (function () {
         this.route = route;
         this.authService = authService;
         this.isLoading = false;
-        this.userLoggedIn = false; // CHANGE BACK TO FALSE BEFORE PROD
+        this.userLoggedIn = false; // CHANGE TO FALSE BEFORE PROD
         this.failedAttempt = false;
         this.username = '';
         this.password = '';
@@ -419,6 +419,7 @@ var AdminComponent = /** @class */ (function () {
         });
     }
     AdminComponent.prototype.ngOnInit = function () {
+        // Redirect to /profile when user is logged in
         if (this.authService.isLoggedIn()) {
             this.router.navigate(['/', 'profile']);
         }
@@ -689,10 +690,12 @@ var appRoutes = [
     { path: 'contact', component: _contact_contact_component__WEBPACK_IMPORTED_MODULE_10__["ContactComponent"] },
     { path: 'downloads', component: _downloads_downloads_component__WEBPACK_IMPORTED_MODULE_29__["DownloadsComponent"] },
     { path: 'admin',
-        component: _admin_admin_component__WEBPACK_IMPORTED_MODULE_30__["AdminComponent"],
+        component: _admin_admin_component__WEBPACK_IMPORTED_MODULE_30__["AdminComponent"]
+    },
+    { path: 'profile',
+        component: _profile_profile_component__WEBPACK_IMPORTED_MODULE_31__["ProfileComponent"],
         canActivate: [_services_can_activate_auth_service__WEBPACK_IMPORTED_MODULE_14__["CanActivateViaAuthGuard"]]
     },
-    { path: 'profile', component: _profile_profile_component__WEBPACK_IMPORTED_MODULE_31__["ProfileComponent"] },
     { path: 'create',
         component: _create_create_component__WEBPACK_IMPORTED_MODULE_19__["CreateComponent"],
         canActivate: [_services_can_activate_auth_service__WEBPACK_IMPORTED_MODULE_14__["CanActivateViaAuthGuard"]]
