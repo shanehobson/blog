@@ -130,7 +130,7 @@ a:focus {
     position: relative;
     border: 2px solid;
     border-radius: 8px;
-    border-color: darken($warrantyBlue, 10);
+    border-color: lighten($warrantyBlue, 10);
     width: 394px;
 }
 

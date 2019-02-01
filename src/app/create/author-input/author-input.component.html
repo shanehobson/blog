@@ -1,4 +1,4 @@
-<form class="input-field-form">
+<form class="input-field-form blog-input-border blog-input-border_blue" style="position: relative;">
     <div class="d-flex j-center flex-column align-center" style="margin-left: auto; margin-right: auto;" [formGroup]="authorForm">
         <div style="padding: 0 5px 5px 5px;" class="d-flex j-center">
             <button
@@ -24,7 +24,7 @@
             >
         </div>
       </div>
-    <div class="input-field-close-out" (mouseup)="removeAuthor(authorForm)">
+    <div class="input-field-close-out" style="position: absolute; top: 0; right: 7px;" (mouseup)="removeAuthor(authorForm)">
       <i class="fa fa-times"></i>
     </div>
 </form>

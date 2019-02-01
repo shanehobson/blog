@@ -692,6 +692,7 @@ var appRoutes = [
     { path: 'admin',
         component: _admin_admin_component__WEBPACK_IMPORTED_MODULE_30__["AdminComponent"]
     },
+    // Protected Routes
     { path: 'profile',
         component: _profile_profile_component__WEBPACK_IMPORTED_MODULE_31__["ProfileComponent"],
         canActivate: [_services_can_activate_auth_service__WEBPACK_IMPORTED_MODULE_14__["CanActivateViaAuthGuard"]]
@@ -704,6 +705,7 @@ var appRoutes = [
         component: _home_home_component__WEBPACK_IMPORTED_MODULE_8__["HomeComponent"],
         canActivate: [_services_can_activate_auth_service__WEBPACK_IMPORTED_MODULE_14__["CanActivateViaAuthGuard"]]
     },
+    // Home Component
     { path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_8__["HomeComponent"] }
 ];
 var AppModule = /** @class */ (function () {
@@ -1293,7 +1295,7 @@ var ContactComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form class=\"input-field-form\">\n    <div class=\"d-flex j-center flex-column align-center\" style=\"margin-left: auto; margin-right: auto;\" [formGroup]=\"authorForm\">\n        <div style=\"padding: 0 5px 5px 5px;\" class=\"d-flex j-center\">\n            <button\n              style=\"margin-top: 2px;\"\n              type=\"submit\"\n              class=\"rect-btn rect-btn_small rect-btn_blue\"\n              [disabled]=\"!authorForm.valid || !authorForm.dirty\"\n              (mouseup)=\"addAuthor(authorForm)\"\n              >\n              Add <i class=\"fa fa-arrow-right\"></i>\n            </button>\n        </div>\n        <div class=\"d-flex j-center align-end\" style=\"font-size: 14px; margin-top: 10px;\">\n            Author\n          </div>\n        <div class=\"d-flex j-center align-start\" style=\"margin-left: auto; margin-right: auto;\">\n            <input\n            class=\"create-input-control\"\n            type=\"text\"\n            formControlName=\"author\"\n            (keydown.enter)=\"addAuthor(authorForm)\"\n            required\n            >\n        </div>\n      </div>\n    <div class=\"input-field-close-out\" (mouseup)=\"removeAuthor(authorForm)\">\n      <i class=\"fa fa-times\"></i>\n    </div>\n</form>\n  "
+module.exports = "<form class=\"input-field-form blog-input-border blog-input-border_blue\" style=\"position: relative;\">\n    <div class=\"d-flex j-center flex-column align-center\" style=\"margin-left: auto; margin-right: auto;\" [formGroup]=\"authorForm\">\n        <div style=\"padding: 0 5px 5px 5px;\" class=\"d-flex j-center\">\n            <button\n              style=\"margin-top: 2px;\"\n              type=\"submit\"\n              class=\"rect-btn rect-btn_small rect-btn_blue\"\n              [disabled]=\"!authorForm.valid || !authorForm.dirty\"\n              (mouseup)=\"addAuthor(authorForm)\"\n              >\n              Add <i class=\"fa fa-arrow-right\"></i>\n            </button>\n        </div>\n        <div class=\"d-flex j-center align-end\" style=\"font-size: 14px; margin-top: 10px;\">\n            Author\n          </div>\n        <div class=\"d-flex j-center align-start\" style=\"margin-left: auto; margin-right: auto;\">\n            <input\n            class=\"create-input-control\"\n            type=\"text\"\n            formControlName=\"author\"\n            (keydown.enter)=\"addAuthor(authorForm)\"\n            required\n            >\n        </div>\n      </div>\n    <div class=\"input-field-close-out\" style=\"position: absolute; top: 0; right: 7px;\" (mouseup)=\"removeAuthor(authorForm)\">\n      <i class=\"fa fa-times\"></i>\n    </div>\n</form>\n  "
 
 /***/ }),
 
@@ -1739,7 +1741,7 @@ var CreateComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form class=\"input-field-form\">\n    <div class=\"d-flex j-center flex-column align-center\" style=\"margin-left: auto; margin-right: auto;\" [formGroup]=\"dateForm\">\n        <div style=\"padding: 0 5px 5px 5px;\" class=\"d-flex j-center\">\n            <button\n              style=\"margin-top: 2px;\"\n              type=\"submit\"\n              class=\"rect-btn rect-btn_small rect-btn_blue\"\n              [disabled]=\"!dateForm.valid || !dateForm.dirty\"\n              (mouseup)=\"addDate(dateForm)\"\n              >\n              Add <i class=\"fa fa-arrow-right\"></i>\n            </button>\n        </div>\n        <div class=\"d-flex j-center align-end\" style=\"font-size: 14px; margin-top: 10px;\">\n            Date\n          </div>\n        <div class=\"d-flex j-center align-start\" style=\"margin-left: auto; margin-right: auto;\">\n            <input\n            class=\"create-input-control\"\n            type=\"text\"\n            formControlName=\"date\"\n            (keydown.enter)=\"addDate(dateForm)\"\n            required\n            >\n        </div>\n      </div>\n    <div class=\"input-field-close-out\" (mouseup)=\"removeDate(dateForm)\">\n      <i class=\"fa fa-times\"></i>\n    </div>\n</form>\n  "
+module.exports = "<form class=\"input-field-form blog-input-border blog-input-border_blue\" style=\"position: relative;\">\n    <div class=\"d-flex j-center flex-column align-center\" style=\"margin-left: auto; margin-right: auto;\" [formGroup]=\"dateForm\">\n        <div style=\"padding: 0 5px 5px 5px;\" class=\"d-flex j-center\">\n            <button\n              style=\"margin-top: 2px;\"\n              type=\"submit\"\n              class=\"rect-btn rect-btn_small rect-btn_blue\"\n              [disabled]=\"!dateForm.valid || !dateForm.dirty\"\n              (mouseup)=\"addDate(dateForm)\"\n              >\n              Add <i class=\"fa fa-arrow-right\"></i>\n            </button>\n        </div>\n        <div class=\"d-flex j-center align-end\" style=\"font-size: 14px; margin-top: 10px;\">\n            Date\n          </div>\n        <div class=\"d-flex j-center align-start\" style=\"margin-left: auto; margin-right: auto;\">\n            <input\n            class=\"create-input-control\"\n            type=\"text\"\n            formControlName=\"date\"\n            (keydown.enter)=\"addDate(dateForm)\"\n            required\n            >\n        </div>\n      </div>\n    <div class=\"input-field-close-out\" style=\"position: absolute; top: 0; right: 7px;\" (mouseup)=\"removeDate(dateForm)\">\n      <i class=\"fa fa-times\"></i>\n    </div>\n</form>\n  "
 
 /***/ }),
 
