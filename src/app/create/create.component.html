@@ -4,9 +4,9 @@
       <div class="create-post-section">
         <form [formGroup]="createPostForm">
           <h2>Create Blog Post</h2>
-          <div class="input-field" style="margin-left: auto; margin-right: auto; max-width: 450px;">
-              <label *ngIf="editTitleMode" class="create-input-label">Title</label>
-              <div *ngIf="editTitleMode" class="d-flex j-center align-start" style="margin-left: auto; margin-right: auto;">
+          <div *ngIf="editTitleMode" class="input-field" style="margin-left: auto; margin-right: auto; max-width: 450px;">
+              <label class="create-input-label">Title</label>
+              <div class="d-flex j-center align-start" style="margin-left: auto; margin-right: auto;">
                   <input 
                   class="create-input-control"
                   style="border: 1px solid #808080; border-radius: 4px;"
