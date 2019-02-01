@@ -419,10 +419,15 @@ var AdminComponent = /** @class */ (function () {
         });
     }
     AdminComponent.prototype.ngOnInit = function () {
-        this.username = window.sessionStorage.getItem('username');
-        this.loginForm.controls['username'].setValue(this.username);
-        this.password = window.sessionStorage.getItem('password');
-        this.loginForm.controls['password'].setValue(this.password);
+        if (this.authService.isLoggedIn()) {
+            this.router.navigate(['/', 'profile']);
+        }
+        else {
+            this.username = window.sessionStorage.getItem('username');
+            this.loginForm.controls['username'].setValue(this.username);
+            this.password = window.sessionStorage.getItem('password');
+            this.loginForm.controls['password'].setValue(this.password);
+        }
     };
     AdminComponent.prototype.handleLoginSubmit = function (form) {
         var _this = this;
@@ -508,7 +513,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"app-container\">\n    <div *ngIf=\"!isLoading\" class=\"navBar-container\">\n        <div class=\"narrow-nav-container d-flex align-center j-space-between\">\n          <div style=\"padding-top: 9px;\">\n            <img src=\"../assets/images/logo-reduced.png\" alt=\"\" class=\"navBar-logo-picture\">\n          </div>\n          <div class=\"d-flex j-space-between align-center\" [ngClass]=\"authService.isLoggedIn() ? 'navBar-links-container-extended' : 'navBar-links-container'\">\n            <div style=\"margin: auto 0\"><a (mouseup)=\"handleHomeClicked()\" [ngClass]=\"this.colorService.getActivatedRoute('/')\">Home</a></div>\n            <div style=\"margin: auto 0\"><a (mouseup)=\"handleAboutClicked()\" [ngClass]=\"this.colorService.getActivatedRoute('/about')\">About</a></div>\n            <div style=\"margin: auto 0\"><a (mouseup)=\"handleContactClicked()\" [ngClass]=\"this.colorService.getActivatedRoute('/contact')\">Contact</a></div>\n            <div style=\"margin: auto 0\"><a (mouseup)=\"handleDownloadsClicked()\" [ngClass]=\"this.colorService.getActivatedRoute('/downloads')\">Downloads</a></div>\n            <div *ngIf=\"authService.isLoggedIn()\" style=\"margin: auto 0\"><a (mouseup)=\"handleProfileClicked()\" [ngClass]=\"this.colorService.getActivatedRoute('/profile')\">Admin</a></div>\n          </div>\n          <div class=\"hamburger-menu\" (mouseup)=\"toggleHamburgerMenu()\">\n            <div></div>\n            <div></div>\n            <div></div>\n          </div>\n        </div>\n      </div>\n      <div class=\"hamburger-menu-content d-flex flex-column align-center\" [ngClass]=\"showHamburgerMenuContent ? 'show-hamburger' : 'hide-hamburger'\">\n        <div class=\"hamburger-inner-content\">\n            <div><a (mouseup)=\"handleHomeClicked()\" [ngClass]=\"this.colorService.getActivatedRoute('/')\">Home</a></div>\n            <div><a (mouseup)=\"handleAboutClicked()\" [ngClass]=\"this.colorService.getActivatedRoute('/about')\">About</a></div>\n            <div><a (mouseup)=\"handleContactClicked()\"  [ngClass]=\"this.colorService.getActivatedRoute('/contact')\">Contact</a></div>\n            <div><a (mouseup)=\"handleDownloadsClicked()\" [ngClass]=\"this.colorService.getActivatedRoute('/downloads')\">Downloads</a></div>\n            <div><a (mouseup)=\"handleProfileClicked()\" [ngClass]=\"this.colorService.getActivatedRoute('/profile')\">Admin</a></div>\n        </div>\n      </div>\n    <div *ngIf=\"!isLoading\">\n      <router-outlet  (activate)=\"onActivate($event)\"></router-outlet>\n    </div>\n    <div *ngIf=\"isLoading\" class=\"d-flex j-center align-center\" style=\"margin: 200px auto 0 auto\">\n      <app-spinner [color]=\"'red'\"></app-spinner>\n    </div>\n</div>\n<div *ngIf=\"!isLoading\" class=\"footer\">\n    &copy; 2019 PitchingTheory.com\n</div>\n\n\n"
+module.exports = "<div class=\"app-container\">\n    <div *ngIf=\"!isLoading\" class=\"navBar-container\">\n        <div class=\"narrow-nav-container d-flex align-center j-space-between\">\n          <div style=\"padding-top: 9px;\">\n            <img src=\"../assets/images/logo-reduced.png\" alt=\"\" class=\"navBar-logo-picture\">\n          </div>\n          <div class=\"d-flex j-space-between align-center\" [ngClass]=\"authService.isLoggedIn() ? 'navBar-links-container-extended' : 'navBar-links-container'\">\n            <div style=\"margin: auto 0\"><a (mouseup)=\"handleHomeClicked()\" [ngClass]=\"this.colorService.getActivatedRoute('/')\">Home</a></div>\n            <div style=\"margin: auto 0\"><a (mouseup)=\"handleAboutClicked()\" [ngClass]=\"this.colorService.getActivatedRoute('/about')\">About</a></div>\n            <div style=\"margin: auto 0\"><a (mouseup)=\"handleContactClicked()\" [ngClass]=\"this.colorService.getActivatedRoute('/contact')\">Contact</a></div>\n            <div style=\"margin: auto 0\"><a (mouseup)=\"handleDownloadsClicked()\" [ngClass]=\"this.colorService.getActivatedRoute('/downloads')\">Downloads</a></div>\n            <div *ngIf=\"authService.isLoggedIn()\" style=\"margin: auto 0\"><a (mouseup)=\"handleProfileClicked()\" [ngClass]=\"this.colorService.getActivatedRoute('/admin')\">Admin</a></div>\n          </div>\n          <div class=\"hamburger-menu\" (mouseup)=\"toggleHamburgerMenu()\">\n            <div></div>\n            <div></div>\n            <div></div>\n          </div>\n        </div>\n      </div>\n      <div class=\"hamburger-menu-content d-flex flex-column align-center\" [ngClass]=\"showHamburgerMenuContent ? 'show-hamburger' : 'hide-hamburger'\">\n        <div class=\"hamburger-inner-content\">\n            <div><a (mouseup)=\"handleHomeClicked()\" [ngClass]=\"this.colorService.getActivatedRoute('/')\">Home</a></div>\n            <div><a (mouseup)=\"handleAboutClicked()\" [ngClass]=\"this.colorService.getActivatedRoute('/about')\">About</a></div>\n            <div><a (mouseup)=\"handleContactClicked()\"  [ngClass]=\"this.colorService.getActivatedRoute('/contact')\">Contact</a></div>\n            <div><a (mouseup)=\"handleDownloadsClicked()\" [ngClass]=\"this.colorService.getActivatedRoute('/downloads')\">Downloads</a></div>\n            <div><a (mouseup)=\"handleProfileClicked()\" [ngClass]=\"this.colorService.getActivatedRoute('/profile')\">Admin</a></div>\n        </div>\n      </div>\n    <div *ngIf=\"!isLoading\">\n      <router-outlet  (activate)=\"onActivate($event)\"></router-outlet>\n    </div>\n    <div *ngIf=\"isLoading\" class=\"d-flex j-center align-center\" style=\"margin: 200px auto 0 auto\">\n      <app-spinner [color]=\"'red'\"></app-spinner>\n    </div>\n</div>\n<div *ngIf=\"!isLoading\" class=\"footer\">\n    &copy; 2019 PitchingTheory.com\n</div>\n\n\n"
 
 /***/ }),
 
@@ -2785,7 +2790,7 @@ var CanActivateViaAuthGuard = /** @class */ (function () {
             return true;
         }
         else {
-            this.router.navigate(['/', 'admin']);
+            return false;
         }
     };
     CanActivateViaAuthGuard = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -2822,11 +2827,18 @@ var ColorService = /** @class */ (function () {
         this.router = router;
     }
     ColorService.prototype.getActivatedRoute = function (path) {
-        if (this.router.url === path) {
-            return 'selected';
+        if (path !== '/admin') {
+            if (this.router.url === path) {
+                return 'selected';
+            }
+            else {
+                return '$tastyGrey';
+            }
         }
-        else {
-            return '$tastyGrey';
+        else if (path === '/admin') {
+            if (this.router.url.includes('create') || this.router.url.includes('edit') || this.router.url.includes('admin') || this.router.url.includes('profile')) {
+                return 'selected';
+            }
         }
     };
     ColorService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([

@@ -9,7 +9,7 @@
             <div style="margin: auto 0"><a (mouseup)="handleAboutClicked()" [ngClass]="this.colorService.getActivatedRoute('/about')">About</a></div>
             <div style="margin: auto 0"><a (mouseup)="handleContactClicked()" [ngClass]="this.colorService.getActivatedRoute('/contact')">Contact</a></div>
             <div style="margin: auto 0"><a (mouseup)="handleDownloadsClicked()" [ngClass]="this.colorService.getActivatedRoute('/downloads')">Downloads</a></div>
-            <div *ngIf="authService.isLoggedIn()" style="margin: auto 0"><a (mouseup)="handleProfileClicked()" [ngClass]="this.colorService.getActivatedRoute('/profile')">Admin</a></div>
+            <div *ngIf="authService.isLoggedIn()" style="margin: auto 0"><a (mouseup)="handleProfileClicked()" [ngClass]="this.colorService.getActivatedRoute('/admin')">Admin</a></div>
           </div>
           <div class="hamburger-menu" (mouseup)="toggleHamburgerMenu()">
             <div></div>

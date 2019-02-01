@@ -32,10 +32,14 @@ export class AdminComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.username = window.sessionStorage.getItem('username');
-    this.loginForm.controls['username'].setValue(this.username);
-    this.password = window.sessionStorage.getItem('password');
-    this.loginForm.controls['password'].setValue(this.password);
+    if (this.authService.isLoggedIn()) {
+      this.router.navigate(['/', 'profile']);
+    } else {
+      this.username = window.sessionStorage.getItem('username');
+      this.loginForm.controls['username'].setValue(this.username);
+      this.password = window.sessionStorage.getItem('password');
+      this.loginForm.controls['password'].setValue(this.password);
+    }
   }
 
 

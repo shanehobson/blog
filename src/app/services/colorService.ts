@@ -6,10 +6,16 @@ export class ColorService {
  constructor(private router: Router){}
 
    getActivatedRoute(path){
-     if (this.router.url === path) {
+    if (path !== '/admin') {
+      if (this.router.url === path) {
         return 'selected';
      } else {
         return '$tastyGrey';
+      }
+    } else if (path === '/admin') {
+      if (this.router.url.includes('create') || this.router.url.includes('edit') || this.router.url.includes('admin') || this.router.url.includes('profile')) {
+        return 'selected';
+      }
     }
-   }
+   } 
 }
