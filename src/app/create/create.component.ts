@@ -171,6 +171,8 @@ export class CreateComponent implements OnInit, OnDestroy {
         index: i
       });
       this.saveDataToSessionStorage();
+    } else {
+      this.inputField.splice(0);
     }
   }
 

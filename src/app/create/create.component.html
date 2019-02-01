@@ -62,7 +62,7 @@
               <button class="rect-btn rect-btn_small rect-btn_green" (mouseup)="addInputField('image', '', this.blog.elements.length);" [disabled]="inputField.length > 0 && inputField[0].type !== 'image'">Picture <i class="fa fa-plus"></i></button>
           </div>
           <div style="padding: 5px;">
-              <button class="rect-btn rect-btn_small rect-btn_gold" (mouseup)="addInputField('video', '', this.blog.elements.length);" [disabled]="inputField.length > 0">Video <i class="fa fa-plus"></i></button>
+              <button class="rect-btn rect-btn_small rect-btn_gold" (mouseup)="addInputField('video', '', this.blog.elements.length);" [disabled]="inputField.length > 0 && inputField[0].type !== 'video'">Video <i class="fa fa-plus"></i></button>
           </div>
         </div>
         <div class="divider"></div>
