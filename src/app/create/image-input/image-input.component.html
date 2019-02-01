@@ -1,5 +1,5 @@
-<div *ngIf="!isLoading" class="blog-input-border blog-input-border_green d-flex j-center flex-column align-center">
-  <form class="input-field-form" enctype="multipart/form-data" style="margin-bottom: 25px;">
+<div *ngIf="!isLoading" class="blog-input-border blog-input-border_green d-flex j-center flex-column align-center" style="padding-bottom: 5px;">
+  <form class="input-field-form" enctype="multipart/form-data" style="margin-bottom: 0;">
       <div class="d-flex j-center flex-column align-center" style="margin-left: auto; margin-right: auto;">
           <div class="d-flex j-center" style="margin-left: auto; margin-right: auto;">
               <input 
@@ -10,11 +10,11 @@
                   #fileInput>
           </div>
         </div>
-        <div class="input-field-close-out" (mouseup)="removeImage(imageForm)" style="position: absolute; top: -15px; right: -5px;">
+        <div class="input-field-close-out" (mouseup)="removeImage(imageForm)" style="position: absolute; top: -25px; right: -20px;">
             <i class="fa fa-times"></i>
         </div>
   </form>
-  <div class="d-flex j-center align-center">
+  <div class="d-flex j-left align-center" style="max-width: 450px; min-width: 300px; margin: 15px auto 0 auto;">
     Caption
   </div>
   <form class="input-field-form">

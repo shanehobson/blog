@@ -1,6 +1,6 @@
-<form class="input-field-form">
+<form class="input-field-form blog-input-border blog-input-border_blue" style="position: relative; padding-top: 15px;">
     <div class="d-flex j-center flex-column align-center" style="margin-left: auto; margin-right: auto;" [formGroup]="paragraphForm">
-        <div style="padding: 0 5px 5px 5px;" class="d-flex j-center">
+        <div style="padding: 0 5px 15px 5px;" class="d-flex j-center">
             <button
               style="margin-top: 2px;"
               type="submit"
@@ -15,7 +15,7 @@
             <textarea
             rows="20"
             class="create-input-control"
-            style="height: 400px; width: 470px;"
+            style="height: 400px; width: 390px; margin: 5px auto;"
             type="text"
             formControlName="paragraph"
             (keydown.enter)="addParagraph(paragraphForm)"
@@ -24,7 +24,10 @@
             </textarea>
         </div>
       </div>
-    <div class="input-field-close-out" (mouseup)="removeParagraph(paragraphForm)">
+    <div 
+        class="input-field-close-out"
+        (mouseup)="removeParagraph(paragraphForm)"
+        style="position: absolute; top:0; right: 5px;">
       <i class="fa fa-times"></i>
     </div>
 </form>

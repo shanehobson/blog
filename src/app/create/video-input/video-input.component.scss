@@ -1,1 +1,19 @@
 @import '../../../sass/buttons.scss';
+
+.create-input-control {
+    max-width: 500px;
+    min-width: 300px;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.image-input {
+    min-width: 200px;
+    text-align: center;
+
+    &:focus {
+        border: 1px solid $gold !important;
+        outline: none !important;
+    }
+}
+

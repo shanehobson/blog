@@ -94,7 +94,7 @@ a:focus {
 }
 
 // Create Blog Input Styles
-.blog-input-border {
+.blog-input-border_green {
     margin: 0 auto 25px auto;
     padding: 30px;
     position: relative;
@@ -102,30 +102,36 @@ a:focus {
     border-radius: 8px;
     border-color: lighten($buttonGreen, 10);
     width: 394px;
+}
 
-    &._red {
-        border: 2px solid;
-        border-radius: 4px;
-        border-color: darken($richRed, 10);
-    }
+.blog-input-border_yellow {
+    margin: 0 auto 25px auto;
+    padding: 30px;
+    position: relative;
+    border: 2px solid;
+    border-radius: 8px;
+    border-color: $gold;
+    width: 394px;
+}
 
-    &._blue {
-        border: 2px solid;
-        border-radius: 4px;
-        border-color: darken($warrantyBlue, 10);
-    }
+.blog-input-border_red {
+    margin: 0 auto 25px auto;
+    padding: 30px;
+    position: relative;
+    border: 2px solid;
+    border-radius: 8px;
+    border-color: lighten($richRed, 10);
+    width: 394px;
+}
 
-    &._green {
-        border: 2px solid;
-        border-radius: 4px;
-        border-color: darken($buttonGreen, 10);
-    }
-
-    &._yellow {
-        border: 2px solid;
-        border-radius: 4px;
-        border-color: darken($gold, 5);
-    }
+.blog-input-border_blue {
+    margin: 0 auto 25px auto;
+    padding: 30px;
+    position: relative;
+    border: 2px solid;
+    border-radius: 8px;
+    border-color: darken($warrantyBlue, 10);
+    width: 394px;
 }
 
 // General Input Styles
