@@ -172,8 +172,25 @@
     }
 }
 
+.top-level-edit-and-delete-buttons-container {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+.edit-and-delete-buttons-container {
+    position: absolute;
+    top: 25px;
+    right: -35px;
+    cursor: pointer;
+    width: 35px;
+}
+
 @media only screen and (max-width: $tablet-breakpoint) {
     .blog-entry-container {
+        margin: 0;
+    }
+    .blog-entry-container-edit-post-mode {
         margin: 0;
     }
 }
@@ -188,6 +205,10 @@
 
     .blog-entry-container {
         padding: 25px 10px 20px 10px;
+    }
+    .blog-entry-container-edit-post-mode {
+        width: 100%;
+        padding: 20px;
     }
 
     .blog-text-content-container {
@@ -217,5 +238,15 @@
 
     .blog-paragraph {
         text-indent: 25px;
+    }
+
+    .top-level-edit-and-delete-buttons-container {
+        top: 5px;
+        right: 35px;
+    }
+
+    .edit-and-delete-buttons-container {
+        top: 25px;
+        right: -10px;
     }
 }

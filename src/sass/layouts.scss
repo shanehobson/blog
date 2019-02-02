@@ -23,11 +23,13 @@
     padding-right: 10px;
 }
 
-.blog-entry-container {
+.blog-entry-container,
+.blog-entry-container-edit-post-mode {
     padding: 20px 40px;
     background-color: #fff;
     border: 1px solid $grayBorder;
     border-radius: 8px;
+    margin-bottom: 30px;
 
     &.tall {
         height: 700px;
@@ -36,7 +38,8 @@
 }
 
 @media only screen and (max-width: $tablet-breakpoint) {
-    .blog-entry-container {
+    .blog-entry-container,
+    .blog-entry-container-edit-post-mode {
         padding-top: 0;
         border-radius: 0;
     }
@@ -139,7 +142,8 @@
         width: 100%;
     }
 
-    .blog-entry-container {
+    .blog-entry-container,
+    .blog-entry-container-edit-post-mode {
         border-radius: 8px;
     }
 }
@@ -150,6 +154,14 @@
         border-bottom: 1px solid $grayBorder;
         border-radius: 0;
     
+        &.tall {
+            height: 700px;
+            overflow-y: scroll;
+        }
+    }
+    .blog-entry-container-edit-post-mode {
+        border-radius: 0;
+
         &.tall {
             height: 700px;
             overflow-y: scroll;

@@ -34,7 +34,7 @@ body {
     background-attachment: fixed;
     position: relative;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -224,6 +224,13 @@ a:focus {
 
     .create-input-control {
         max-width: 400px;
+    }
+
+    .blog-input-border_blue,
+    .blog-input-border_red,
+    .blog-input-border_green,
+    .blog-input-border_yellow {
+        border: none;
     }
 }
 

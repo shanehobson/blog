@@ -1,5 +1,11 @@
-<article class="blog-entry-container" [ngClass]="editPostMode ? 'tall' : ''" style="position: relative;">
-  <div *ngIf="editBlogMode && !isLoading" class="d-flex j-center" style="position: absolute; top: 15px; right: 15px;">
+<article 
+    [ngClass]="{
+        'tall': editPostMode,
+        'blog-entry-container': !editPostMode,
+        'blog-entry-container-edit-post-mode': editPostMode
+    }"
+     style="position: relative;">
+  <div *ngIf="editBlogMode && !isLoading" class="d-flex j-center">
     <div style="padding: 5px; cursor: pointer;">
         <i class="fa fa-edit" (mouseup)="onEditPost()"></i>
     </div>
@@ -15,15 +21,15 @@
       <div *ngIf="blog.elements.length > 0 && editPostMode" class="divider"></div>
       <div style="position: relative">
         <h3 *ngIf="!blogSubmitted" class="section-title blog-section-title">{{blog.title}}</h3>
-        <div *ngIf="editPostMode && !blogSubmitted" style="position: absolute; top: 5px; right: 10px;">
+        <div *ngIf="editPostMode && !blogSubmitted">
             <div style="padding: 5px; cursor: pointer;">
-                <i class="fa fa-edit" (mouseup)="onEditTitle()"></i>
+                <i class="fa fa-edit top-level-edit-and-delete-buttons-container" (mouseup)="onEditTitle()"></i>
             </div>
         </div>
       </div>
       <div *ngIf="blog.author !== '' && !blogSubmitted" class="section-byline" style="position: relative; text-align: center;">
           <p *ngIf="blog.author !== ''">By {{blog.author}}</p>
-          <div *ngIf="editPostMode" class="d-flex j-center" style="position: absolute; top: 0; right: 10px;">
+          <div *ngIf="editPostMode" class="d-flex j-center top-level-edit-and-delete-buttons-container">
             <div style="padding: 5px; cursor: pointer;">
                 <i class="fa fa-edit" (mouseup)="onEditAuthor()"></i>
             </div>
@@ -34,7 +40,7 @@
       </div>
       <div *ngIf="!blogSubmitted" class="blog-entry-date-container" style="position: relative;  text-align: center; margin-bottom: 0; padding-bottom: 0;">
           <p><img [src]="'../../../assets/images/calendar.png'" style="Height: 26px; width: 26px; margin-right: 3px; margin-bottom: -8px;"> {{blog.date}}</p>
-          <div *ngIf="editPostMode" class="d-flex j-center" style="position: absolute; top: 0; right: 10px;">
+          <div *ngIf="editPostMode" class="d-flex j-center top-level-edit-and-delete-buttons-container">
               <div style="padding: 5px; cursor: pointer;">
                   <i class="fa fa-edit" (mouseup)="onEditDate()"></i>
               </div>
@@ -55,7 +61,7 @@
       </div>
       <div *ngIf="!isLoading" class="blog-text-content-container">
         <div *ngFor="let element of blog.elements; let i = index;" style="position: relative">
-          <div *ngIf="editPostMode" class="d-flex j-space-between align-center;" style="position: absolute; top: 25px; right: -35px; cursor: pointer; width: 35px;">
+          <div *ngIf="editPostMode" class="d-flex j-space-between align-center;" class="edit-and-delete-buttons-container">
             <i class="fa fa-edit" (mouseup)="onEditButtonClicked(i)"></i>
             <i class="fa fa-trash" (mouseup)="onRemoveButtonClicked(i)"></i>
           </div>
