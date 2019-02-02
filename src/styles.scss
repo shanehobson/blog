@@ -142,6 +142,8 @@ a:focus {
     label, input {
         display: block;
         margin: 0 auto;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
     .input-label {
@@ -169,9 +171,9 @@ a:focus {
 
 .input-field-close-out {
     position: absolute;
-    top: -5px;
-    right: -30px;
     cursor: pointer;
+    top:0;
+    right: 5px;
 }
 
 .create-input-label {
@@ -214,6 +216,9 @@ a:focus {
 }
 
 @media only screen and (max-width: $mobile-breakpoint) {
+    html, body {
+        overflow-x: hidden;
+    }
     .mobile-hidden {
         display: none;
     }
@@ -230,7 +235,12 @@ a:focus {
     .blog-input-border_red,
     .blog-input-border_green,
     .blog-input-border_yellow {
-        border: none;
+      border: none;
+    }
+
+    .input-field-close-out {
+        right: 60px;
+        top: 15px;
     }
 }
 

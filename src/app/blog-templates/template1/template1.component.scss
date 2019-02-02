@@ -207,8 +207,10 @@
         padding: 25px 10px 20px 10px;
     }
     .blog-entry-container-edit-post-mode {
+        max-width: 100%;
         width: 100%;
-        padding: 20px;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .blog-text-content-container {
@@ -242,11 +244,11 @@
 
     .top-level-edit-and-delete-buttons-container {
         top: 5px;
-        right: 35px;
+        right: 20px;
     }
 
     .edit-and-delete-buttons-container {
         top: 25px;
-        right: -10px;
+        right: 0;
     }
 }

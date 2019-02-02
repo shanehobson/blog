@@ -5,7 +5,7 @@
         'blog-entry-container-edit-post-mode': editPostMode
     }"
      style="position: relative;">
-  <div *ngIf="editBlogMode && !isLoading" class="d-flex j-center">
+  <div *ngIf="editBlogMode && !isLoading" class="d-flex j-center" style="width: 100%;">
     <div style="padding: 5px; cursor: pointer;">
         <i class="fa fa-edit" (mouseup)="onEditPost()"></i>
     </div>
@@ -18,7 +18,7 @@
       <div *ngIf="blog.elements.length > 0 && editPostMode" class="d-flex j-center align-center">
         <button class="rect-btn rect-btn_small rect-btn_green" (mouseup)="submitBlogPost()">Submit</button>
       </div>
-      <div *ngIf="blog.elements.length > 0 && editPostMode" class="divider"></div>
+      <div *ngIf="blog.elements.length > 0 && editPostMode" class="divider mobile-hidden"></div>
       <div style="position: relative">
         <h3 *ngIf="!blogSubmitted" class="section-title blog-section-title">{{blog.title}}</h3>
         <div *ngIf="editPostMode && !blogSubmitted">

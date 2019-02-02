@@ -40,7 +40,7 @@
 @media only screen and (max-width: $tablet-breakpoint) {
     .blog-entry-container,
     .blog-entry-container-edit-post-mode {
-        padding-top: 0;
+        padding-top: 20px;
         border-radius: 0;
     }
 
@@ -135,11 +135,13 @@
         margin: 0;
         padding: 0;
         width: 100%;
+        max-width: 100%;
     } 
     .narrow-container {
         margin: 0;
         padding: 0;
         width: 100%;
+        max-width: 100%;
     }
 
     .blog-entry-container,
@@ -153,6 +155,8 @@
         padding: 25px 20px 0 20px;
         border-bottom: 1px solid $grayBorder;
         border-radius: 0;
+        width: 100%;
+        max-width: 100%;
     
         &.tall {
             height: 700px;
@@ -161,6 +165,10 @@
     }
     .blog-entry-container-edit-post-mode {
         border-radius: 0;
+        width: 100%;
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
 
         &.tall {
             height: 700px;

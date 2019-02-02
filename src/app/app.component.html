@@ -1,4 +1,4 @@
-<div class="app-container">
+<div class="app-container" style="width: 100%">
     <div *ngIf="!isLoading" class="navBar-container">
         <div class="narrow-nav-container d-flex align-center j-space-between">
           <div style="padding-top: 9px;">
@@ -27,7 +27,7 @@
             <div><a (mouseup)="handleProfileClicked()" [ngClass]="this.colorService.getActivatedRoute('/profile')">Admin</a></div>
         </div>
       </div>
-    <div *ngIf="!isLoading">
+    <div *ngIf="!isLoading" style="width: 100%">
       <router-outlet  (activate)="onActivate($event)"></router-outlet>
     </div>
     <div *ngIf="isLoading" class="d-flex j-center align-center" style="margin: 200px auto 0 auto">

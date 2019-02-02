@@ -14,8 +14,7 @@
         <div class="d-flex j-center align-start" style="margin-left: auto; margin-right: auto;">
             <textarea
             rows="20"
-            class="create-input-control"
-            style="height: 400px; width: 390px; margin: 5px auto;"
+            class="create-input-control paragraph-textarea"
             type="text"
             formControlName="paragraph"
             (keydown.enter)="addParagraph(paragraphForm)"
@@ -27,7 +26,7 @@
     <div 
         class="input-field-close-out"
         (mouseup)="removeParagraph(paragraphForm)"
-        style="position: absolute; top:0; right: 5px;">
+       >
       <i class="fa fa-times"></i>
     </div>
 </form>
