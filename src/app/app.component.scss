@@ -130,7 +130,8 @@
 }
 
   @media only screen and (max-width: $mobile-breakpoint) {
-    .navBar-links-container {
+    .navBar-links-container,
+    .navBar-links-container-extended {
         display: none;
     }
 

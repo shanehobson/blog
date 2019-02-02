@@ -99,14 +99,31 @@
     .non-mobile-j-space-between {
         justify-content: space-between;
     }
+
+    .non-mobile-j-start {
+        justify-content: flex-start;
+    }
+
+    .non-mobile-align-start {
+        align-items: flex-start;
+    }
 }
 
 @media only screen and (max-width: $mobile-breakpoint) {
     .mobile-flex-column {
         flex-direction: column;
     }
+
+    .mobile-j-center {
+        justify-content: center;
+    }
+
     .mobile-j-start {
-        flex-direction: column;
+       justify-content: flex-start;
+    }
+
+    .mobile-align-center {
+        align-items: flex-center;
     }
 }
 
@@ -114,6 +131,7 @@
     .container{
         margin: 0;
         padding: 0;
+        width: 100%;
     } 
     .narrow-container {
         margin: 0;

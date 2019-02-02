@@ -34,5 +34,54 @@
         margin: 15px auto;
         text-align: center;
     }
+}
 
+.add-button-container {
+    padding: 0 5px 5px 5px;
+}
+
+@media only screen and (max-width: $tablet-breakpoint) {
+    .create-post-container {
+        display: block;
+        padding: 0;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 90%;
+    }
+
+    .create-post-section {
+        min-height: 400px;
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width: $mobile-breakpoint) {
+    .create-button-flex-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .create-input-label {
+        margin-left: 0;
+    }
+
+    .add-button-container {
+        padding-top: 20px;
+    }
+
+    .create-blog-post-page-title {
+        margin-bottom: 0;
+    }
+
+    .create-post-container {
+       margin: 0;
+       width: 100%;
+    }
+
+    .create-post-section {
+        width: 100vw;
+        margin: 0;
+        border-radius: 0;
+    }
 }
