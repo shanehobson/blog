@@ -18,7 +18,10 @@
 }
 
 .create-input-label {
-    margin-left: -25px;
+    text-align: left;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .create-post-section {
@@ -63,7 +66,7 @@
     }
 
     .create-input-label {
-        margin-left: 0;
+        max-width: 300px;
     }
 
     .add-button-container {

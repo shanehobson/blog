@@ -94,44 +94,55 @@ a:focus {
 }
 
 // Create Blog Input Styles
-.blog-input-border_green {
+.blog-input-border {
     margin: 0 auto 25px auto;
     padding: 30px;
     position: relative;
     border: 2px solid;
     border-radius: 8px;
-    border-color: lighten($buttonGreen, 10);
     width: 394px;
+    box-shadow: 0px 5px 3px -3px #eee;
+}
+
+.blog-input-border_green {
+    // margin: 0 auto 25px auto;
+    // padding: 30px;
+    // position: relative;
+    // border: 1px solid;
+    // border-radius: 8px;
+    // border-color: lighten($buttonGreen, 10);
+    // width: 394px;
+    // box-shadow: 0px 5px 3px -3px #eee;
 }
 
 .blog-input-border_yellow {
-    margin: 0 auto 25px auto;
-    padding: 30px;
-    position: relative;
-    border: 2px solid;
-    border-radius: 8px;
-    border-color: $gold;
-    width: 394px;
+    // margin: 0 auto 25px auto;
+    // padding: 30px;
+    // position: relative;
+    // border: 2px solid;
+    // border-radius: 8px;
+    // border-color: $gold;
+    // width: 394px;
 }
 
 .blog-input-border_red {
-    margin: 0 auto 25px auto;
-    padding: 30px;
-    position: relative;
-    border: 2px solid;
-    border-radius: 8px;
-    border-color: lighten($richRed, 10);
-    width: 394px;
+    // margin: 0 auto 25px auto;
+    // padding: 30px;
+    // position: relative;
+    // border: 2px solid;
+    // border-radius: 8px;
+    // border-color: lighten($richRed, 10);
+    // width: 394px;
 }
 
 .blog-input-border_blue {
-    margin: 0 auto 25px auto;
-    padding: 30px;
-    position: relative;
-    border: 2px solid;
-    border-radius: 8px;
-    border-color: lighten($warrantyBlue, 10);
-    width: 394px;
+    // margin: 0 auto 25px auto;
+    // padding: 30px;
+    // position: relative;
+    // border: 2px solid;
+    // border-radius: 8px;
+    // border-color: lighten($warrantyBlue, 10);
+    // width: 394px;
 }
 
 // General Input Styles
