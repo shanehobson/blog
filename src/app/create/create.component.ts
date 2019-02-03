@@ -125,6 +125,10 @@ export class CreateComponent implements OnInit, OnDestroy {
     this.editDateMode = true;
   }
 
+  removeTitle() {
+    this.editTitleMode = false;
+  }
+
   removeDate() {
     this.editDateMode = false;
   }
@@ -141,6 +145,7 @@ export class CreateComponent implements OnInit, OnDestroy {
 
   removeAuthor() {
     this.editAuthorMode = false;
+    this.blog.author = '';
     this.saveDataToSessionStorage();
   }
   addTitle(form) {

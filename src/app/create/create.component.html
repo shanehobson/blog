@@ -4,9 +4,12 @@
       <div class="create-post-section">
         <form [formGroup]="createPostForm">
           <h2 class="create-blog-post-page-title">Create Blog Post</h2>
-          <div *ngIf="editTitleMode" class="input-field" style="margin-left: auto; margin-right: auto; max-width: 450px;">
-              <label class="create-input-label">Title</label>
-              <div class="d-flex j-center non-mobile-align-start mobile-align-center mobile-flex-column" style="margin-left: auto; margin-right: auto;">
+          <div *ngIf="editTitleMode" class="input-field blog-input-border" style="margin: 5px auto 20px auto; width: 435px; position: relative;">
+              <div class="input-field-close-out" style="position: absolute; top: 0; right: 7px;" (mouseup)="removeTitle()">
+                  <i class="fa fa-times"></i>
+                </div>
+              <label class="create-input-label" style="margin-top: 15px; max-width: 300px;">Title</label>
+              <div class="d-flex j-space-between align-center flex-column" style="margin-left: auto; margin-right: auto;">
                   <input 
                   class="create-input-control"
                   style="border: 1px solid #808080; border-radius: 4px;"
@@ -15,7 +18,7 @@
                   (keydown.enter)="addTitle(createPostForm)"
                   required
                   >
-                  <div class="add-button-container d-flex non-mobile-j-start mobile-j-center align-center;">
+                  <div class="add-button-container d-flex j-center align-center;">
                     <button
                     style="margin-top: 2px;"
                       type="button"
