@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
   title = 'pitching-theory-app';
   showHamburgerMenuContent = false;
   isLoading = true;
+  editPostMode = false;
 
   constructor(
     private router: Router,
@@ -27,6 +28,9 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (this.authService.isLoggedIn()) {
+      this.editPostMode = true;
+    }
     setTimeout(() => {
       this.isLoading = false;
     }, 1800)

@@ -73,25 +73,24 @@
           <p *ngIf="element.type === 'paragraph'"  class="blog-paragraph">
             {{element.content}}
           </p>
-          <div *ngIf="element.type === 'image'" class="d-flex j-center" style="margin: 25px auto; max-width: 400px;">
+          <div *ngIf="element.type === 'image'" class="blog-image-box d-flex j-center" style="margin: 25px auto; max-width: 400px;">
             <div class="blog-image-element-container" [ngClass]="element.caption !== '' ? 'blog-image-border' : ''">
                 <img [src]="element.content" class="blog-image-element" style="max-width: 400px; max-height: 270px;">
                 <div *ngIf="element.caption !== ''" class="blog-title-image-border-top"></div>
                 <div *ngIf="element.caption !== ''" style="max-width: 270px; display: flex; justify-content: center; text-align: center; padding: 10px 5px;">{{element.caption}}</div>
             </div>
           </div>
-          <div *ngIf="element.type === 'video'" class="d-flex j-center" style="margin: 25px auto; max-width: 450px;">
+          <div *ngIf="element.type === 'video'" class="blog-image-box d-flex j-center" style="margin: 25px auto; max-width: 450px;">
               <div class="blog-image-element-container" [ngClass]="element.caption !== '' ? 'blog-image-border' : ''">
                   <video
-                   width="400"
                   height="300"
                   controls
                   [src]="element.content"
                   type="video/mp4"
-                  class="blog-image-element"
+                  class="blog-image-element blog-video-element"
                   [ngClass]="element.caption !== '' ? 'blog-image-border-top' : ''">
                   </video>
-                  <div *ngIf="element.caption !== ''" style="max-width: 270px; display: flex; justify-content: center; text-align: center; padding: 10px 5px;">{{element.caption}}</div>
+                  <div *ngIf="element.caption !== ''" style="max-width: 280px; display: flex; justify-content: center; text-align: center; padding: 10px 5px;">{{element.caption}}</div>
               </div>
             </div>
         </div>

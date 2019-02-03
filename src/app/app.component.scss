@@ -85,6 +85,21 @@
     }
 }
 
+.show-hamburger-tall {
+    height: 220px;
+    background-color: $navbarBackground;
+    visibility: show;
+    -webkit-transition: height .6s ease-in-out; /* Safari */
+    transition: height .6s ease-in-out;
+    overflow: hidden;
+
+    div {
+        display: block;
+        -webkit-transition: display .8s ease-in-out; /* Safari */
+        transition: display .8s ease-in-out;
+    }
+}
+
 .hide-hamburger {
     height: 0px;
     background-color: $navbarBackground;

@@ -109,6 +109,10 @@
     padding: 0;
 }
 
+.blog-video-element {
+    width: 460px;
+}
+
 .blog-photograph-element-caption {
     border-right: 1px solid $grayBorder;
     border-left: 1px solid $grayBorder;
@@ -217,6 +221,8 @@
 
     .blog-entry-container {
         padding: 25px 10px 20px 10px;
+        padding-left: 0;
+        padding-right: 0;
     }
     .blog-entry-container-edit-post-mode {
         max-width: 100%;
@@ -265,5 +271,17 @@
         top: 25px;
         right: 0;
         width: 35px;
+    }
+
+    .blog-image-box {
+        padding-left: 5px;
+        padding-right: 5px;
+        max-width: 84vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .blog-video-element {
+        width: 340px;
     }
 }

@@ -18,7 +18,14 @@
           </div>
         </div>
       </div>
-      <div class="hamburger-menu-content d-flex flex-column align-center" [ngClass]="showHamburgerMenuContent ? 'show-hamburger' : 'hide-hamburger'">
+      <div class="hamburger-menu-content d-flex flex-column align-center" 
+        [ngClass]="{
+          'show-hamburger': showHamburgerMenuContent && !editPostMode,
+          'hide-hamburger': !showHamburgerMenuContent,
+          'show-hamburger-tall': showHamburgerMenuContent && editPostMode
+        }"
+      
+      [ngClass]="showHamburgerMenuContent ? 'show-hamburger' : 'hide-hamburger'">
         <div class="hamburger-inner-content">
             <div><a (mouseup)="handleHomeClicked()" [ngClass]="this.colorService.getActivatedRoute('/')">Home</a></div>
             <div><a (mouseup)="handleAboutClicked()" [ngClass]="this.colorService.getActivatedRoute('/about')">About</a></div>
