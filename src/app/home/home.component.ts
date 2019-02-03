@@ -49,18 +49,22 @@ export class HomeComponent implements OnInit {
   filterBlogPosts(criteria) { // takes in a lower case string
     const filteredPosts = [];
     this.sortedBlogs.forEach(post => {
+      let match = false;
       const title = post.title.toLowerCase();
       const author = post.author.toLowerCase();
       const imageSubtitle = post.imageSubtitle.toLowerCase();
       if (title.indexOf(criteria) > -1 || author.indexOf(criteria) > -1 || imageSubtitle.indexOf(criteria) > -1) {
-        filteredPosts.push(post);
+        match = true;
       } else {
         post.elements.forEach(el => {
           const content = el.content.toLowerCase();
           if (content.indexOf(criteria) > -1) {
-            filteredPosts.push(post);
+            match = true;
           }
         })
+      }
+      if (match) {
+        filteredPosts.push(post);
       }
     });
     console.log(filteredPosts);
