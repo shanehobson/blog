@@ -137,7 +137,7 @@
     font-size: 18px;
 }
 
-@media only screen and (min-width: $largeScreenBreakpoint) {
+@media only screen and (min-width: $tablet-breakpoint) {
     .blog-section-title {
         display: block;
         margin-top: 22px;
@@ -175,15 +175,27 @@
 .top-level-edit-and-delete-buttons-container {
     position: absolute;
     top: 5px;
-    right: 10px;
+    right: -34px;
+}
+
+.top-level-edit-and-delete-buttons-container-date {
+    position: absolute;
+    top: 5px;
+    right: -12px;
+}
+
+.top-level-edit-and-delete-buttons-container-title {
+    position: absolute;
+    top: 5px;
+    right: -20px;
 }
 
 .edit-and-delete-buttons-container {
     position: absolute;
     top: 25px;
-    right: -35px;
+    right: -41px;
     cursor: pointer;
-    width: 35px;
+    width: 38px;
 }
 
 @media only screen and (max-width: $tablet-breakpoint) {
@@ -242,7 +254,9 @@
         text-indent: 25px;
     }
 
-    .top-level-edit-and-delete-buttons-container {
+    .top-level-edit-and-delete-buttons-container,
+    .top-level-edit-and-delete-buttons-container-title,
+    .top-level-edit-and-delete-buttons-container-date {
         top: 5px;
         right: 20px;
     }
@@ -250,5 +264,6 @@
     .edit-and-delete-buttons-container {
         top: 25px;
         right: 0;
+        width: 35px;
     }
 }
