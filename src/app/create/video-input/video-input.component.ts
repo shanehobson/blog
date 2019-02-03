@@ -44,11 +44,12 @@ export class VideoInputComponent implements OnInit {
     this.isLoading = true;
     console.log(this.file);
     let extension;
-    if (this.file.type === 'video/quicktime') {
-      extension === '.mov';
+    if (this.file.type === 'video/mp4') {
+      extension === '.mp4';
     } else {
       console.log('incorrect file type');
-      extension === '.mov'; // change before prod
+      const alert = window.alert('Incorrect file type. Please upload a video with the .mp4 extension.');
+      return;
     }
     const name = `${this.file.name}${Date.now()}`;
     const uploadData = new FormData();

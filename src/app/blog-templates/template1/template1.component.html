@@ -51,11 +51,13 @@
               <i class="fa fa-edit" (mouseup)="onEditTitlePictureButtonClicked()"></i>
               <i class="fa fa-trash" (mouseup)="onRemoveTitlePictureButtonClicked()"></i>
           </div>
-          <div class="blog-image-element-container" style="max-width: 600px" [ngClass]="blog.imageSubtitle !== '' ? 'blog-image-border' : ''">
+          <div class="blog-image-element-container" style="min-width: 270px; max-width: 550px" [ngClass]="blog.imageSubtitle !== '' ? 'blog-image-border' : ''">
             <img src="{{blog.imageUrl}}" class="blog-image-element"> 
             <div *ngIf="blog.imageSubtitle !== ''" class="blog-title-image-border-top"></div>
-            <div *ngIf="blog.imageSubtitle !== ''" style="display: flex; justify-content: center; padding: 2px 5px 10px 5px; margin: 0 auto;">
-              {{blog.imageSubtitle}}
+            <div *ngIf="blog.imageSubtitle !== ''" style="display: flex; justify-content: center; padding: 10px 5px; margin: 0 auto;">
+              <div style="max-width: 270px; text-align: center;">
+                {{blog.imageSubtitle}}
+              </div>
           </div>
         </div>
       </div>
@@ -75,21 +77,21 @@
             <div class="blog-image-element-container" [ngClass]="element.caption !== '' ? 'blog-image-border' : ''">
                 <img [src]="element.content" class="blog-image-element" style="max-width: 400px; max-height: 270px;">
                 <div *ngIf="element.caption !== ''" class="blog-title-image-border-top"></div>
-                <div *ngIf="element.caption !== ''" style="max-width: 270px; display: flex; justify-content: center; padding: 10px 5px;">{{element.caption}}</div>
+                <div *ngIf="element.caption !== ''" style="max-width: 270px; display: flex; justify-content: center; text-align: center; padding: 10px 5px;">{{element.caption}}</div>
             </div>
           </div>
           <div *ngIf="element.type === 'video'" class="d-flex j-center" style="margin: 25px auto; max-width: 450px;">
               <div class="blog-image-element-container" [ngClass]="element.caption !== '' ? 'blog-image-border' : ''">
-                  <video width="400"
+                  <video
+                   width="400"
                   height="300"
                   controls
                   [src]="element.content"
                   type="video/mp4"
                   class="blog-image-element"
-                
                   [ngClass]="element.caption !== '' ? 'blog-image-border-top' : ''">
                   </video>
-                  <div *ngIf="element.caption !== ''" style="max-width: 270px; display: flex; justify-content: center; padding: 2px 5px 10px 5px;">{{element.caption}}</div>
+                  <div *ngIf="element.caption !== ''" style="max-width: 270px; display: flex; justify-content: center; text-align: center; padding: 10px 5px;">{{element.caption}}</div>
               </div>
             </div>
         </div>
