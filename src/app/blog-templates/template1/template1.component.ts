@@ -21,6 +21,7 @@ export class Template1Component implements OnInit {
   @Output() emitRemoveAuthor = new EventEmitter();
   @Output() blogPostSubmitted = new EventEmitter();
   @Output() postDeleted = new EventEmitter();
+  @Output() blogReset = new EventEmitter();
   isLoading = false;
   blogSubmitted = false;
 
@@ -97,5 +98,12 @@ export class Template1Component implements OnInit {
   onEditPost() {
     console.log('Edit post called');
     this.router.navigate(['/create'], { queryParams: { id : this.blog._id }});
+  }
+
+  resetBlogPost() {
+    const confirmed = window.confirm('Are you sure you want to clear all the elements of this blog post and start from scratch?')
+    if (confirmed) {
+      this.blogReset.emit();
+    }
   }
 }

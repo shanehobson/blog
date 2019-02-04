@@ -11,6 +11,7 @@ import { BlogService } from '../services/blogService';
 export class CreateComponent implements OnInit, OnDestroy {
 
   isLoading = false;
+  titleControlPristine = true;
 
   // Create
   createPostForm: FormGroup;
@@ -327,6 +328,24 @@ export class CreateComponent implements OnInit, OnDestroy {
       this.blog.elements.splice(i, 1);
       this.saveDataToSessionStorage();
     }
+  }
+
+  showAddTitle() {
+    this.titleControlPristine = false;
+    this.editTitleMode = true;
+  }
+
+  resetBlogPost() {
+    this.blog = {
+      type: '2',
+      title: 'Blog Post Title',
+      author: 'Cameron Hobson',
+      date: '',
+      imageUrl: '',
+      imageSubtitle: '',
+      elements: []
+    };
+    this.saveDataToSessionStorage();
   }
 
 }

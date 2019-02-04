@@ -4,7 +4,12 @@
       <div class="create-post-section">
         <form [formGroup]="createPostForm">
           <h2 class="create-blog-post-page-title">Create Blog Post</h2>
-          <div *ngIf="editTitleMode" class="input-field blog-input-border" style="margin: 5px auto 20px auto; width: 435px; position: relative;">
+          <div *ngIf="!editTitleMode && !isLoading && titleControlPristine">
+              <div  class="create-button-flex-container" style="padding: 5px;">
+                  <button class="rect-btn rect-btn_small rect-btn_blue" (mouseup)="showAddTitle()">Title <i class="fa fa-edit"></i></button>
+              </div>
+          </div>
+          <div *ngIf="editTitleMode" class="input-field blog-input-border" style="margin: 20px auto 20px auto; width: 435px; position: relative;">
               <div class="input-field-close-out" style="position: absolute; top: 0; right: 7px;" (mouseup)="removeTitle()">
                   <i class="fa fa-times"></i>
                 </div>
@@ -117,7 +122,8 @@
           (emitEditDate)="editDate()"
           (emitEditAuthor)="editAuthor()"
           (emitRemoveAuthor)="removeAuthor()"
-          (submitBlogPost)="blogPostSubmitted()">
+          (submitBlogPost)="blogPostSubmitted()"
+          (blogReset)="resetBlogPost()">
         </app-template1>
       </div>
     </section>

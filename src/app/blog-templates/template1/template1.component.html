@@ -16,7 +16,12 @@
     <div *ngIf="!isLoading" style="margin: 0 auto; max-width: 650px;">
       <div *ngIf="blogSubmitted" class="d-flex j-center align-center green-text" style="margin-top: 50px;">Success! <i class="fa fa-check green-check"></i></div>
       <div *ngIf="blog.elements.length > 0 && editPostMode" class="d-flex j-center align-center" style="margin-bottom: 5px;">
-        <button class="rect-btn rect-btn_small rect-btn_green" (mouseup)="submitBlogPost()">Submit</button>
+            <div *ngIf="blog.elements.length > 0 && editPostMode" class="d-flex j-center align-center" style="padding: 5px;">
+                <button class="rect-btn rect-btn_small rect-btn_green" (mouseup)="submitBlogPost()">Submit <i class="fas fa-check"></i></button>
+            </div>
+            <div *ngIf="blog.elements.length > 0 && editPostMode" class="d-flex j-center align-center" style="padding: 5px;">
+                <button class="rect-btn rect-btn_small rect-btn_red" (mouseup)="resetBlogPost()">Clear <i class="fas fa-snowplow"></i></button>
+            </div>
       </div>
       <div *ngIf="blog.elements.length > 0 && editPostMode" class="divider mobile-hidden"></div>
       <div style="position: relative">
