@@ -85,10 +85,10 @@
                   <video
                   height="300"
                   controls
-                  [src]="element.content"
-                  type="video/mp4"
                   class="blog-image-element blog-video-element"
                   [ngClass]="element.caption !== '' ? 'blog-image-border-top' : ''">
+                    <source [src]="element.content" type="video/mp4">
+                    <source [src]="element.content" type="video/webm">
                   </video>
                   <div *ngIf="element.caption !== ''" style="max-width: 280px; display: flex; justify-content: center; text-align: center; padding: 10px 5px;">{{element.caption}}</div>
               </div>
