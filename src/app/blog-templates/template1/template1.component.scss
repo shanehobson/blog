@@ -210,6 +210,11 @@
     .blog-entry-container-edit-post-mode {
         margin: 0;
     }
+    
+    .blog-image-element {
+        max-height: 258px;
+    }
+   
 }
 
 @media only screen and (max-width: $mobile-breakpoint) {
@@ -283,6 +288,8 @@
     }
 
     .blog-video-element {
-        width: 340px;
+        max-width: 375px;
+        max-height: 200px;
+        margin-left: -2px;
     }
 }
