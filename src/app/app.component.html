@@ -37,7 +37,7 @@
     <div *ngIf="!isLoading" style="width: 100%">
       <router-outlet  (activate)="onActivate($event)"></router-outlet>
     </div>
-    <div *ngIf="isLoading" class="d-flex j-center align-center" style="margin: 200px auto 0 auto">
+    <div *ngIf="isLoading" class="d-flex j-center align-center" style="margin: 300px auto 0 auto">
       <app-spinner [color]="'red'"></app-spinner>
     </div>
 </div>

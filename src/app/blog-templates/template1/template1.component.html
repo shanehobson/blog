@@ -85,15 +85,15 @@
                 <div *ngIf="element.caption !== ''" style="max-width: 270px; display: flex; justify-content: center; text-align: center; padding: 10px 5px;">{{element.caption}}</div>
             </div>
           </div>
-          <div *ngIf="element.type === 'video'" class="blog-image-box d-flex j-center" style="margin: 25px auto; max-width: 450px;">
+          <div *ngIf="element.type === 'video'" class="blog-image-box d-flex j-center align-start" style="margin: 25px auto; max-width: 550px;">
               <div class="blog-image-element-container" [ngClass]="element.caption !== '' ? 'blog-image-border' : ''">
                   <video
-                  height="300"
+                  height="258"
                   controls
                   class="blog-image-element blog-video-element"
                   [ngClass]="element.caption !== '' ? 'blog-image-border-top' : ''">
-                    <source [src]="element.content" type="video/mp4">
-                    <source [src]="element.content" type="video/webm">
+                    <source [src]="element.content" style="height: 258px; margin-top: 0; padding-top: 0" type="video/mp4">
+                    <source [src]="element.content" style="height: 258px; margin-top: 0; padding-top: 0" type="video/webm">
                   </video>
                   <div *ngIf="element.caption !== ''" style="max-width: 280px; display: flex; justify-content: center; text-align: center; padding: 10px 5px;">{{element.caption}}</div>
               </div>

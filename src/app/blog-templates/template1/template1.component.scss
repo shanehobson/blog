@@ -41,7 +41,7 @@
 }
 
 .blog-image-border {
-    border: 1px solid $grayBorder;
+    border: 2px solid $grayBorder;
     border-radius: 4px;
 }
 
@@ -110,7 +110,7 @@
 }
 
 .blog-video-element {
-    width: 460px;
+    max-width: 550px;
 }
 
 .blog-photograph-element-caption {
