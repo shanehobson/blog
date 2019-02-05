@@ -41,7 +41,7 @@
       <app-spinner [color]="'red'"></app-spinner>
     </div>
 </div>
-<div *ngIf="!isLoading" class="footer">
+<div *ngIf="!isLoading" class="footer" [ngClass]="getStickyFooter()">
     &copy; 2019 PitchingTheory.com
 </div>
 

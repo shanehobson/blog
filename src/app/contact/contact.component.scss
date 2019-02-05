@@ -59,11 +59,27 @@
    .contact-body-container {
        margin: 0;
        border-radius: 0;
-       min-height: 75vh;
+       min-height: 77vh;
+       padding-left: 10px;
+       padding-top: 5px;
+
+       p {
+           padding-right: 20px;
+           text-align: center;
+       }
+   }
+
+   .contact-icons-container {
+       padding-top: 45px;
+   }
+
+   .contact-paragraph-container {
+       margin-top: 12px;
    }
 
    .page-title {
-      margin-left: -40px !important;
+      margin-left: -48px !important;
+      margin-top: 30px !important;
    }
 
     .contact-section-container {

@@ -68,4 +68,12 @@ export class AppComponent implements OnInit {
     this.showHamburgerMenuContent = false;
     this.router.navigate(['/', 'profile']);
   }
+
+  getStickyFooter() {
+    if (this.router.url === '/contact') {
+      return 'sticky-footer';
+    } else {
+      return '';
+    }
+  }
 }
