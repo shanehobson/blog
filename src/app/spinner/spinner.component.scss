@@ -29,6 +29,14 @@
       background-color: lighten($richRed, 10);
     }
 
+    &.yellow {
+      background-color: $gold;
+    }
+
+    &.blue {
+      background-color: lighten($warrantyBlue, 10);
+    }
+
     &.default {
       background-color: #333;
     }

@@ -115,6 +115,7 @@
       <div>
         <app-template1 
           [blog]="blog"
+          [blogElementAdded]="blogElementAdded"
           [editPostMode]="true"
           (emitEditItem)="openEditItem($event)"
           (emitRemoveItem)="removeItem($event)"

@@ -12,6 +12,7 @@ export class CreateComponent implements OnInit, OnDestroy {
 
   isLoading = false;
   titleControlPristine = true;
+  blogElementAdded = 0;
 
   // Create
   createPostForm: FormGroup;
@@ -189,6 +190,7 @@ export class CreateComponent implements OnInit, OnDestroy {
     };
     const index = this.inputField[0].index;
     this.blog.elements[index] = item;
+    this.blogElementAdded++;
     this.inputField = [];
     this.saveDataToSessionStorage();
   }
@@ -225,6 +227,7 @@ export class CreateComponent implements OnInit, OnDestroy {
     };
     const index = this.inputField[0].index;
     this.blog.elements[index] = item;
+    this.blogElementAdded++;
     this.inputField = [];
     this.saveDataToSessionStorage();
   }
@@ -244,6 +247,7 @@ export class CreateComponent implements OnInit, OnDestroy {
     };
     const index = this.inputField[0].index;
     this.blog.elements[index] = item;
+    this.blogElementAdded++;
     this.inputField = [];
     this.saveDataToSessionStorage();
   }
@@ -263,6 +267,7 @@ export class CreateComponent implements OnInit, OnDestroy {
     };
     const index = this.inputField[0].index;
     this.blog.elements[index] = item;
+    this.blogElementAdded++;
     this.inputField = [];
     this.saveDataToSessionStorage();
   }

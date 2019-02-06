@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { BlogService } from '../../services/blogService';
 
@@ -9,7 +9,9 @@ import { BlogService } from '../../services/blogService';
 })
 export class Template1Component implements OnInit {
 
+  @ViewChild('scrollContainer') private scrollContainer: ElementRef;
   @Input() blog;
+  @Input() blogElementAdded;
   @Input() index;
   @Input() editPostMode;
   @Input() editBlogMode;
@@ -33,6 +35,15 @@ export class Template1Component implements OnInit {
 
   ngOnInit() {
     console.log(this.blog);
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(changes);
+    if (this.editPostMode) {
+      if (changes['blogElementAdded']) {
+        this.scrollToBottom();
+      }
+    }
   }
 
   submitBlogPost() {
@@ -104,6 +115,13 @@ export class Template1Component implements OnInit {
     const confirmed = window.confirm('Are you sure you want to clear all the elements of this blog post and start from scratch?')
     if (confirmed) {
       this.blogReset.emit();
+    }
+  }
+
+  scrollToBottom(): void {
+    console.log('scroll to bottom');
+    if (this.scrollContainer) {
+      this.scrollContainer.nativeElement.scrollTop = this.scrollContainer.nativeElement.scrollHeight;
     }
   }
 }
