@@ -46,7 +46,7 @@ app.use(function(req, res, next) {
 });
 
 /* Mongo DB Atlas Connection string */
-const uri = `mongodb+srv://shane:${process.env.MongoDbPassword}@cluster0-gjsun.mongodb.net/test?retryWrites=true`;
+const uri = `mongodb+srv://shane:${process.env.MongoDbPassword}@cluster0-gjsun.mongodb.net/shane-blog?retryWrites=true`;
 
 /* Mongoose Connection */
 mongoose.Promise = require('bluebird');
